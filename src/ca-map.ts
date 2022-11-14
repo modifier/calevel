@@ -53,6 +53,9 @@ export class CaMap extends LitElement {
     .ca-map__map {
       max-width: 100vw;
       max-height: 100vh;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
     }
   `
 }
