@@ -25,12 +25,18 @@ export class CaMap extends LitElement {
   }
 
   protected firstUpdated(): void {
+    this.renderRoot.addEventListener('click', () => {
+      this.selectedCountry = null;
+      this.position = null;
+    });
+
     for (const country of Object.keys(countries)) {
       let el = this.renderRoot.querySelector(`#${country}`);
       if (!el) {
         throw new Error(`Country not found: ${country}`);
       }
       el.addEventListener('click', (e) => {
+        e.stopPropagation();
         this.selectedCountry = country;
 
         const target = e.target as SVGPathElement;
