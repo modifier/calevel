@@ -1,16 +1,26 @@
 import { LitElement, css, html } from 'lit';
-import { customElement } from 'lit/decorators.js';
+import { customElement, property } from 'lit/decorators.js';
 import Map from './assets/eu.svg?raw';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 import countries from './countries';
+import './ca-select-level';
 
 @customElement('ca-map')
 export class CaMap extends LitElement {
+  @property({ attribute: false })
+  private selectedCountry: string | null = null;
+
+  @property({ attribute: false, type: Object })
+  private position: { x: number, y: number } | null = null;
+
   render() {
     return html`
       <div class="ca-map__map">
         ${unsafeHTML(Map)}
       </div>
+      <ca-select-level 
+        country="${this.selectedCountry}" 
+        position="${JSON.stringify(this.position)}" />
     `
   }
 
@@ -21,7 +31,14 @@ export class CaMap extends LitElement {
         throw new Error(`Country not found: ${country}`);
       }
       el.addEventListener('click', (e) => {
-        (e.target as SVGPathElement).classList.toggle('country-red');
+        this.selectedCountry = country;
+
+        const target = e.target as SVGPathElement;
+        const position = target.getBoundingClientRect();
+        this.position = {
+          y: position.top + window.scrollY + position.height / 2,
+          x: position.left + window.scrollX + position.width / 2,
+        };
       });
     }
   }
@@ -36,10 +53,6 @@ export class CaMap extends LitElement {
     .ca-map__map {
       max-width: 100vw;
       max-height: 100vh;
-    }
-    
-    .country-red {
-      fill: #f00;
     }
   `
 }
