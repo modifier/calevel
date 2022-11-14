@@ -7,6 +7,7 @@ import './ca-select-level';
 import levels from './data/levels';
 import {CaSelectEvent} from "./ca-select-level";
 import './ca-level-label';
+import './ca-legend';
 
 @customElement('ca-map')
 export class CaMap extends LitElement {
@@ -19,6 +20,7 @@ export class CaMap extends LitElement {
   render() {
     return html`
       <ca-level-label level="0"></ca-level-label>
+      <ca-legend></ca-legend>
       <div class="ca-map__map">
         ${unsafeHTML(Map)}
       </div>

@@ -14,7 +14,7 @@ export class CaLevelLabel extends LitElement {
   static styles = css`
     h1 {
       position: absolute;
-      top: 200px;
+      top: 30vh;
       left: 200px;
       margin: 0;
     }
