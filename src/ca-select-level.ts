@@ -3,6 +3,12 @@ import { styleMap } from 'lit-html/directives/style-map.js';
 import { customElement, property } from 'lit/decorators.js';
 import levels from './levels';
 
+type CaSelectDetail = { country: string; name: string; };
+
+export class CaSelectEvent extends CustomEvent<CaSelectDetail> {
+
+}
+
 @customElement('ca-select-level')
 export class CaSelectLevel extends LitElement {
   @property()
@@ -26,12 +32,18 @@ export class CaSelectLevel extends LitElement {
       <div style=${styleMap(styles)}>
         <h2>${this.country}</h2>
         <ul>
-          ${levels.map(({ name, level, color }) => {
-            return html`<li data-level="${level}" style="--ca-level-color: ${color}">${name}</li>`
+          ${levels.map(({ name, text, color }) => {
+            return html`<li @click="${this.handleClick}" data-name="${name}" style="--ca-level-color: ${color}">${text}</li>`
           })}
         </ul>
       </div>
     `
+  }
+
+  private handleClick({ target }: MouseEvent) {
+    const name = (target as HTMLLIElement).dataset.name!;
+
+    this.dispatchEvent(new CaSelectEvent("change", { detail: { name, country: this.country! } }));
   }
 
   static styles = css`

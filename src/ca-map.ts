@@ -4,6 +4,8 @@ import Map from './assets/eu.svg?raw';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 import countries from './countries';
 import './ca-select-level';
+import levels from './levels';
+import {CaSelectEvent} from "./ca-select-level";
 
 @customElement('ca-map')
 export class CaMap extends LitElement {
@@ -20,6 +22,7 @@ export class CaMap extends LitElement {
       </div>
       <ca-select-level 
         country="${this.selectedCountry}" 
+        @change="${this.handleLevelChange}"
         position="${JSON.stringify(this.position)}" />
     `
   }
@@ -47,6 +50,13 @@ export class CaMap extends LitElement {
         };
       });
     }
+  }
+
+  private handleLevelChange({ detail: { name, country }}: CaSelectEvent) {
+    const level = levels.find(level => level.name === name);
+    const element = this.renderRoot.querySelector(`#${country}`) as SVGPathElement;
+
+    element.style.fill = level!.color;
   }
 
   static styles = css`

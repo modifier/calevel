@@ -1,11 +1,13 @@
 export default [
   {
-    name: "Lived here",
+    name: "lived",
+    text: "Lived here",
     level: 5,
     color: "#FF7E7E"
   },
   {
-    name: "Stayed here",
+    name: "stayed",
+    text: "Stayed here",
     level: 4,
     color: "#FFB57E"
   }
