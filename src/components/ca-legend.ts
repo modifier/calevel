@@ -1,6 +1,6 @@
 import { LitElement, css, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
-import levels from "./data/levels";
+import levels from "../data/levels";
 
 @customElement('ca-legend')
 export class CaLegend extends LitElement {

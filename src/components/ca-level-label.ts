@@ -1,6 +1,6 @@
 import { LitElement, css, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import labels from "./data/labels";
+import labels from "../data/labels";
 
 @customElement('ca-level-label')
 export class CaLevelLabel extends LitElement {

@@ -1,7 +1,7 @@
 import { LitElement, css, html } from 'lit';
 import { styleMap } from 'lit-html/directives/style-map.js';
 import { customElement, property } from 'lit/decorators.js';
-import levels from './data/levels';
+import levels from '../data/levels';
 
 type CaSelectDetail = { country: string; name: string; };
 
