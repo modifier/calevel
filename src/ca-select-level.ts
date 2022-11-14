@@ -1,7 +1,7 @@
 import { LitElement, css, html } from 'lit';
 import { styleMap } from 'lit-html/directives/style-map.js';
 import { customElement, property } from 'lit/decorators.js';
-import levels from './levels';
+import levels from './data/levels';
 
 type CaSelectDetail = { country: string; name: string; };
 
@@ -18,13 +18,9 @@ export class CaSelectLevel extends LitElement {
   position: { x: 0, y: 0 } | null = null;
 
   render() {
-    if (!this.country) {
-      return null;
-    }
-
     const styles = {
-      top: `${this.position?.y}px`,
-      left: `${this.position?.x}px`,
+      top: `${this.position?.y || 0}px`,
+      left: `${this.position?.x || 0}px`,
       visibility: this.position ? 'visible' : 'hidden',
     };
 

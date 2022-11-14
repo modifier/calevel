@@ -2,10 +2,11 @@ import { LitElement, css, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import Map from './assets/eu.svg?raw';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
-import countries from './countries';
+import countries from './data/countries';
 import './ca-select-level';
-import levels from './levels';
+import levels from './data/levels';
 import {CaSelectEvent} from "./ca-select-level";
+import './ca-level-label';
 
 @customElement('ca-map')
 export class CaMap extends LitElement {
@@ -17,6 +18,7 @@ export class CaMap extends LitElement {
 
   render() {
     return html`
+      <ca-level-label level="0"></ca-level-label>
       <div class="ca-map__map">
         ${unsafeHTML(Map)}
       </div>
