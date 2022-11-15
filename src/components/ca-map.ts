@@ -17,9 +17,14 @@ export class CaMap extends LitElement {
   @property({ attribute: false, type: Object })
   private position: { x: number, y: number } | null = null;
 
+  @property({ attribute: false })
+  private levelsByCountry: Record<string, number> = {};
+
   render() {
+    const totalLevel = Object.values(this.levelsByCountry).reduce((n, a) => n + a, 0);
+
     return html`
-      <ca-level-label level="0"></ca-level-label>
+      <ca-level-label level="${totalLevel}"></ca-level-label>
       <ca-legend></ca-legend>
       <div class="ca-map__map">
         ${unsafeHTML(Map)}
@@ -42,18 +47,20 @@ export class CaMap extends LitElement {
       if (!el) {
         throw new Error(`Country not found: ${country}`);
       }
-      el.addEventListener('click', (e) => {
-        e.stopPropagation();
-        this.selectedCountry = country;
-
-        const target = e.target as SVGPathElement;
-        const position = target.getBoundingClientRect();
-        this.position = {
-          y: position.top + window.scrollY + position.height / 2,
-          x: position.left + window.scrollX + position.width / 2,
-        };
-      });
+      el.addEventListener('click', (e: Event) => this.countryClickHandler(e, country));
     }
+  }
+
+  private countryClickHandler(e: Event, country: string) {
+    e.stopPropagation();
+    this.selectedCountry = country;
+
+    const target = e.target as SVGPathElement;
+    const position = target.getBoundingClientRect();
+    this.position = {
+      y: position.top + window.scrollY + position.height / 2,
+      x: position.left + window.scrollX + position.width / 2,
+    };
   }
 
   private handleLevelChange({ detail: { name, country }}: CaSelectEvent) {
@@ -61,6 +68,7 @@ export class CaMap extends LitElement {
     const element = this.renderRoot.querySelector(`#${country}`) as SVGPathElement;
 
     element.style.fill = level!.color;
+    this.levelsByCountry[country] = level!.level;
   }
 
   static styles = css`
