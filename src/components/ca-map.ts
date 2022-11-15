@@ -18,10 +18,13 @@ export class CaMap extends LitElement {
   private position: { x: number, y: number } | null = null;
 
   @property({ attribute: false })
-  private levelsByCountry: Record<string, number> = {};
+  private levelsByCountry: Record<string, string> = {};
 
   render() {
-    const totalLevel = Object.values(this.levelsByCountry).reduce((n, a) => n + a, 0);
+    const totalLevel = Object.values(this.levelsByCountry).reduce((a, name) => {
+      const level  = levels.find(level => level.name === name);
+      return (level?.level || 0) + a;
+    }, 0);
 
     return html`
       <ca-level-label level="${totalLevel}"></ca-level-label>
@@ -42,10 +45,23 @@ export class CaMap extends LitElement {
       this.position = null;
     });
 
+    const savedCountries = localStorage.getItem('countries');
+
+    if (savedCountries) {
+      try {
+        this.levelsByCountry = JSON.parse(savedCountries);
+      }
+      catch (e) {}
+    }
+
     for (const country of Object.keys(countries)) {
       let elements = Array.from(this.renderRoot.querySelectorAll(`[data-country=${country}]`)) as SVGPathElement[];
       if (elements.length === 0) {
         throw new Error(`Country not found: ${country}`);
+      }
+
+      if (this.levelsByCountry[country]) {
+        this.setCountryColor(country, this.levelsByCountry[country]);
       }
 
       for (const element of elements) {
@@ -67,14 +83,18 @@ export class CaMap extends LitElement {
   }
 
   private handleLevelChange({ detail: { name, country }}: CaSelectEvent) {
+    this.setCountryColor(country, name);
+    this.levelsByCountry[country] = name;
+    localStorage.setItem('countries', JSON.stringify(this.levelsByCountry));
+  }
+
+  private setCountryColor(country: string, name: string) {
     const level = levels.find(level => level.name === name);
     const elements = Array.from(this.renderRoot.querySelectorAll(`[data-country=${country}]`)) as SVGPathElement[];
 
     for (const element of elements) {
       element.style.fill = level!.color;
     }
-
-    this.levelsByCountry[country] = level!.level;
   }
 
   static styles = css`
