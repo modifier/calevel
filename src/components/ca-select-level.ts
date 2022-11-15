@@ -39,7 +39,7 @@ export class CaSelectLevel extends LitElement {
   private handleClick({ target }: MouseEvent) {
     const name = (target as HTMLLIElement).dataset.name!;
 
-    this.dispatchEvent(new CaSelectEvent("change", { detail: { name, country: this.country! } }));
+    this.dispatchEvent(new CaSelectEvent("change", { bubbles: true, composed: true, detail: { name, country: this.country! } }));
   }
 
   static styles = css`
