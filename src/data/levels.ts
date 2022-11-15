@@ -10,5 +10,11 @@ export default [
     text: "Stayed here",
     level: 4,
     color: "#FFB57E"
+  },
+  {
+    name: "default",
+    text: "Never been there",
+    level: 0,
+    color: "#FFF"
   }
 ]

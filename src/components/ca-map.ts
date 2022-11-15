@@ -8,6 +8,7 @@ import levels from '../data/levels';
 import {CaSelectEvent} from "./ca-select-level";
 import '../components/ca-level-label';
 import '../components/ca-legend';
+import '../components/ca-button';
 
 @customElement('ca-map')
 export class CaMap extends LitElement {
@@ -19,6 +20,9 @@ export class CaMap extends LitElement {
 
   @property({ attribute: false })
   private levelsByCountry: Record<string, string> = {};
+
+  @property({ attribute: false })
+  private storedLevelsByCountry: Record<string, string> | null = null;
 
   render() {
     const totalLevel = Object.values(this.levelsByCountry).reduce((a, name) => {
@@ -35,7 +39,11 @@ export class CaMap extends LitElement {
       <ca-select-level 
         country="${this.selectedCountry}" 
         @change="${this.handleLevelChange}"
-        position="${JSON.stringify(this.position)}" />
+        position="${JSON.stringify(this.position)}"></ca-select-level>
+      <nav>
+        ${!this.storedLevelsByCountry ? html`<ca-button @click="${this.handleReset}">Reset</ca-button>` : ''}
+        ${this.storedLevelsByCountry ? html`<ca-button @click="${this.handleRestore}">Restore</ca-button>` : ''}
+      </nav>
     `
   }
 
@@ -54,15 +62,12 @@ export class CaMap extends LitElement {
     }
 
     this.updateCountryLabels();
+    this.updateCountryColors();
 
     for (const country of Object.keys(countries)) {
       let elements = Array.from(this.renderRoot.querySelectorAll(`[data-country=${country}]`)) as SVGPathElement[];
       if (elements.length === 0) {
         throw new Error(`Country not found: ${country}`);
-      }
-
-      if (this.levelsByCountry[country]) {
-        this.setCountryColor(country, this.levelsByCountry[country]);
       }
 
       for (const element of elements) {
@@ -86,10 +91,11 @@ export class CaMap extends LitElement {
   private handleLevelChange({ detail: { name, country }}: CaSelectEvent) {
     this.setCountryColor(country, name);
     this.levelsByCountry[country] = name;
+    this.storedLevelsByCountry = null;
     localStorage.setItem('countries', JSON.stringify(this.levelsByCountry));
   }
 
-  private setCountryColor(country: string, name: string) {
+  private setCountryColor(country: string, name: string = 'default') {
     const level = levels.find(level => level.name === name);
     const elements = Array.from(this.renderRoot.querySelectorAll(`[data-country=${country}]`)) as SVGPathElement[];
 
@@ -105,6 +111,26 @@ export class CaMap extends LitElement {
     }
   }
 
+  private updateCountryColors() {
+    for (const country of Object.keys(countries)) {
+      this.setCountryColor(country, this.levelsByCountry[country]);
+    }
+  }
+
+  private handleReset() {
+    this.storedLevelsByCountry = this.levelsByCountry;
+    this.levelsByCountry = {};
+    localStorage.setItem('countries', JSON.stringify(this.levelsByCountry));
+    this.updateCountryColors();
+  }
+
+  private handleRestore() {
+    this.levelsByCountry = this.storedLevelsByCountry || {};
+    this.storedLevelsByCountry = null;
+    localStorage.setItem('countries', JSON.stringify(this.levelsByCountry));
+    this.updateCountryColors();
+  }
+
   static styles = css`
     :host {
       width: 100%;
@@ -118,6 +144,13 @@ export class CaMap extends LitElement {
       margin: 0 auto;
       display: flex;
       flex-direction: column;
+    }
+    
+    nav {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      padding: 1em;
     }
   `
 }
