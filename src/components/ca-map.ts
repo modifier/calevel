@@ -46,13 +46,14 @@ export class CaMap extends LitElement {
     });
 
     const savedCountries = localStorage.getItem('countries');
-
     if (savedCountries) {
       try {
         this.levelsByCountry = JSON.parse(savedCountries);
       }
       catch (e) {}
     }
+
+    this.updateCountryLabels();
 
     for (const country of Object.keys(countries)) {
       let elements = Array.from(this.renderRoot.querySelectorAll(`[data-country=${country}]`)) as SVGPathElement[];
@@ -94,6 +95,13 @@ export class CaMap extends LitElement {
 
     for (const element of elements) {
       element.style.fill = level!.color;
+    }
+  }
+
+  private updateCountryLabels() {
+    for (const [countryKey, countryName] of Object.entries(countries)) {
+      const element = this.renderRoot.querySelector(`[data-country-name=${countryKey}]`) as SVGPathElement;
+      element.innerHTML = countryName;
     }
   }
 

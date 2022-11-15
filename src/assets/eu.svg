@@ -27,6 +27,7 @@
 	.st23{font-size:12px;}
 </style>
 <g id="地区">
+	<rect x="276.5" y="637.9" class="st9" width="154" height="49"/>
 	<path id="UK" data-country="UK" class="st0" d="M558.5,616.4V706c0,1.7-1.3,3-3,3H476c-1.7,0-3-1.3-3-3V460.5c0-3.1,4.2-4.2,5.7-1.4L558.2,615
 		C558.4,615.5,558.5,616,558.5,616.4z"/>
 	<path id="UK_00000096773038719015062670000004004288675227892897_" data-country="UK" class="st0" d="M405.3,540h36.9c1.7,0,3,1.3,3,3v36.8
@@ -150,5 +151,7 @@
 	<path id="Malta" class="st0" d="M883.8,1225.7l-9.8,3.7c-1,0.4-2.1,0.2-2.9-0.4l-13.9-10.7c-2.6-2-0.5-6.2,2.7-5.3l23.7,7
 		C886.4,1220.8,886.5,1224.6,883.8,1225.7z"/>
 </g>
+	<text x="308" y="672" data-country-name="Ireland"></text>
+	<text x="494" y="654" data-country-name="UK"></text>
 <rect x="938.5" y="962.9" class="st9" width="154" height="49"/>
 </svg>
