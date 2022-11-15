@@ -10,8 +10,8 @@ import '../components/ca-level-label';
 import '../components/ca-legend';
 import '../components/ca-button';
 
-@customElement('ca-map')
-export class CaMap extends LitElement {
+@customElement('ca-app')
+export class CaApp extends LitElement {
   @property({ attribute: false })
   private selectedCountry: string | null = null;
 
@@ -157,6 +157,6 @@ export class CaMap extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'ca-map': CaMap,
+    'ca-map': CaApp,
   }
 }

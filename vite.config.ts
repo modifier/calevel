@@ -4,7 +4,7 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   build: {
     lib: {
-      entry: 'src/ca-map.ts',
+      entry: 'src/ca-app.ts',
       formats: ['es']
     },
     rollupOptions: {
