@@ -43,11 +43,14 @@ export class CaMap extends LitElement {
     });
 
     for (const country of Object.keys(countries)) {
-      let el = this.renderRoot.querySelector(`#${country}`);
-      if (!el) {
+      let elements = Array.from(this.renderRoot.querySelectorAll(`[data-country=${country}]`)) as SVGPathElement[];
+      if (elements.length === 0) {
         throw new Error(`Country not found: ${country}`);
       }
-      el.addEventListener('click', (e: Event) => this.countryClickHandler(e, country));
+
+      for (const element of elements) {
+        element.addEventListener('click', (e: Event) => this.countryClickHandler(e, country));
+      }
     }
   }
 
@@ -65,9 +68,12 @@ export class CaMap extends LitElement {
 
   private handleLevelChange({ detail: { name, country }}: CaSelectEvent) {
     const level = levels.find(level => level.name === name);
-    const element = this.renderRoot.querySelector(`#${country}`) as SVGPathElement;
+    const elements = Array.from(this.renderRoot.querySelectorAll(`[data-country=${country}]`)) as SVGPathElement[];
 
-    element.style.fill = level!.color;
+    for (const element of elements) {
+      element.style.fill = level!.color;
+    }
+
     this.levelsByCountry[country] = level!.level;
   }
 
