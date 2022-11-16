@@ -5,7 +5,6 @@ import levels from '../data/levels';
 import {CaSelectEvent} from "./ca-select-level";
 import '../components/ca-level-label';
 import '../components/ca-legend';
-import '../components/ca-button';
 import '../components/ca-map';
 
 @customElement('ca-app')
@@ -45,13 +44,15 @@ export class CaApp extends LitElement {
       return (level?.level || 0) + a;
     }, 0);
 
+    const isDirty = Object.values(this.levelsByCountry).some((level) => level !== 'default');
+
     return html`
       <ca-level-label level="${totalLevel}"></ca-level-label>
       <ca-legend></ca-legend>
       <ca-map levelsByCountry="${JSON.stringify(this.levelsByCountry)}" @change="${this.handleLevelChange}"></ca-map>
       <nav>
-        ${!this.storedLevelsByCountry ? html`<ca-button @click="${this.handleReset}">Reset</ca-button>` : ''}
-        ${this.storedLevelsByCountry ? html`<ca-button @click="${this.handleRestore}">Restore</ca-button>` : ''}
+        ${isDirty ? html`<button @click="${this.handleReset}">Reset</button>` : ''}
+        ${this.storedLevelsByCountry ? html`<button @click="${this.handleRestore}">Restore</button>` : ''}
       </nav>
     `
   }
@@ -61,7 +62,10 @@ export class CaApp extends LitElement {
       ...this.levelsByCountry,
       [country]: name,
     };
-    this.storedLevelsByCountry = null;
+
+    if (name !== 'default') {
+      this.storedLevelsByCountry = null;
+    }
   }
 
   private handleReset() {
@@ -79,6 +83,14 @@ export class CaApp extends LitElement {
       width: 100%;
       height: 100%;
       margin: 0 auto;
+    }
+    
+    button {
+      background-color: #ffb;
+      box-shadow: 0 0 0 2px #111;
+      border: 0;
+      border-radius: 3px;
+      padding: 6px 8px;
     }
     
     nav {

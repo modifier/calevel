@@ -73,7 +73,7 @@ export default class CaMap extends LitElement {
 
   private updateCountryColors() {
     for (const country of Object.keys(countries)) {
-      const level = levels.find(level => level.name === this.levelsByCountry[country]);
+      const level = levels.find(level => level.name === (this.levelsByCountry[country] || 'default'));
       const elements = Array.from(this.renderRoot.querySelectorAll(`[data-country=${country}]`)) as SVGPathElement[];
 
       for (const element of elements) {
