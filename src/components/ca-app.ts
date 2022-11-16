@@ -6,11 +6,16 @@ import {CaSelectEvent} from "./ca-select-level";
 import '../components/ca-level-label';
 import '../components/ca-legend';
 import '../components/ca-map';
+import '../components/ca-lang-picker';
+import languages from "../data/langs";
 
 @customElement('ca-app')
 export class CaApp extends LitElement {
   @state()
   private storedLevelsByCountry: Record<string, string> | null = null;
+
+  @state()
+  private language: keyof typeof languages = 'en';
 
   private _levelsByCountry: Record<string, string> = {};
 
@@ -53,6 +58,7 @@ export class CaApp extends LitElement {
       <nav>
         ${isDirty ? html`<button @click="${this.handleReset}">Reset</button>` : ''}
         ${this.storedLevelsByCountry ? html`<button @click="${this.handleRestore}">Restore</button>` : ''}
+        <ca-lang-picker language="${this.language}" @selectLang="${this.handleLanguageChange}"></ca-lang-picker>
       </nav>
     `
   }
@@ -66,6 +72,10 @@ export class CaApp extends LitElement {
     if (name !== 'default') {
       this.storedLevelsByCountry = null;
     }
+  }
+
+  private handleLanguageChange({ detail: { lang }}: CustomEvent<{ lang: keyof typeof languages}>) {
+    this.language = lang;
   }
 
   private handleReset() {
