@@ -113,6 +113,9 @@ export class CaApp extends LitElement {
       bottom: 0;
       right: 0;
       padding: 1em;
+      display: flex;
+      flex-direction: row;
+      gap: 16px;
     }
   `
 }
