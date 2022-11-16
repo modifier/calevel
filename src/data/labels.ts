@@ -11,4 +11,16 @@ export default {
     "en": "Restore",
     "ru": "Восстановить",
   },
+  share: {
+    "en": "Share",
+    "ru": "Поделиться",
+  },
+  savePicture: {
+    "en": "Save picture",
+    "ru": "Сохранить картинку",
+  },
+  close: {
+    "en": "Close",
+    "ru": "Закрыть"
+  }
 };

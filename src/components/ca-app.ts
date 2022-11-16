@@ -1,4 +1,4 @@
-import { LitElement, css, html } from 'lit';
+import { LitElement, css, html, nothing } from 'lit';
 import { customElement, state } from 'lit/decorators.js';
 import './ca-select-level';
 import levels from '../data/levels';
@@ -7,6 +7,7 @@ import '../components/ca-level-label';
 import '../components/ca-legend';
 import '../components/ca-map';
 import '../components/ca-lang-picker';
+import '../components/ca-share';
 import {Language} from "../data/langs";
 import labels from "../data/labels";
 
@@ -17,6 +18,9 @@ export class CaApp extends LitElement {
 
   @state()
   private language: Language = 'en';
+
+  @state()
+  private sharing = false;
 
   private _levelsByCountry: Record<string, string> = {};
 
@@ -53,18 +57,22 @@ export class CaApp extends LitElement {
     const isDirty = Object.values(this.levelsByCountry).some((level) => level !== 'default');
 
     return html`
-      <ca-level-label language="${this.language}" level="${totalLevel}"></ca-level-label>
-      <ca-legend language="${this.language}"></ca-legend>
-      <ca-map language="${this.language}"
-        levelsByCountry="${JSON.stringify(this.levelsByCountry)}"
-         @change="${this.handleLevelChange}"></ca-map>
+      <div class="ca-map-container ${this.sharing ? 'ca-map-container--sharing' : ''}">
+        <ca-level-label language="${this.language}" level="${totalLevel}"></ca-level-label>
+        <ca-legend language="${this.language}"></ca-legend>
+        <ca-map language="${this.language}"
+          levelsByCountry="${JSON.stringify(this.levelsByCountry)}"
+           @change="${this.handleLevelChange}"></ca-map>
+      </div>
       <nav>
-        ${isDirty ? html`<button @click="${this.handleReset}">${labels.reset[this.language]}</button>` : ''}
+        ${isDirty ? html`<button class="reset" @click="${this.handleReset}">${labels.reset[this.language]}</button>` : nothing}
         ${this.storedLevelsByCountry ? 
           html`<button @click="${this.handleRestore}">${labels.restore[this.language]}</button>`
-          : ''}
+          : nothing}
         <ca-lang-picker language="${this.language}" @selectLang="${this.handleLanguageChange}"></ca-lang-picker>
+        <button class="primary" @click="${this.handleShare}">${labels.share[this.language]}</button>
       </nav>
+      ${this.sharing ? html`<ca-share @close="${this.handleCloseShare}" language="${this.language}"></ca-share>` : nothing}
     `
   }
 
@@ -93,6 +101,14 @@ export class CaApp extends LitElement {
     this.storedLevelsByCountry = null;
   }
 
+  private handleShare() {
+    this.sharing = true;
+  }
+
+  private handleCloseShare() {
+    this.sharing = false;
+  }
+
   static styles = css`
     :host {
       width: 100%;
@@ -100,12 +116,26 @@ export class CaApp extends LitElement {
       margin: 0 auto;
     }
     
+    .ca-map-container {
+      background-color: rgb(215, 199, 182);
+    }
+    
+    .ca-map-container--sharing {
+      width: 800px;
+      height: 600px;
+    }
+    
     button {
-      background-color: #ffb;
+      background-color: #fff;
       box-shadow: 0 0 0 2px #111;
       border: 0;
       border-radius: 3px;
       padding: 6px 8px;
+    }
+    
+    button.primary {
+      padding-inline: 16px;
+      background-color: #ffb;
     }
     
     nav {
@@ -116,6 +146,29 @@ export class CaApp extends LitElement {
       display: flex;
       flex-direction: row;
       gap: 16px;
+    }
+    
+    .ca-share {
+      position: fixed;
+      inset: 0 0 0 0;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 16px;
+    }
+    
+    .canvas {
+      flex: 0 1 auto;
+      height: 480px;
+    }
+    
+    .canvas canvas {
+      width: auto !important;
+      height: auto !important;
+      max-height: 100%; 
+      box-shadow: 0 5px 20px rgb(0 0 0 / 10%);
     }
   `
 }
