@@ -1,14 +1,18 @@
 import { LitElement, css, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import labels from "../data/labels";
+import {Language} from "../data/langs";
 
 @customElement('ca-level-label')
 export class CaLevelLabel extends LitElement {
   @property()
+  language!: Language;
+
+  @property()
   level: number = 0;
 
   render() {
-    return html`<h1>${labels.mainLabel} ${this.level}</h1>`;
+    return html`<h1>${labels.mainLabel[this.language]} ${this.level}</h1>`;
   }
 
   static styles = css`

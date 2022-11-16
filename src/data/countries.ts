@@ -1,4 +1,10 @@
 export default {
-    "UK": "UK",
-    "Ireland": "Ireland",
+  "UK": {
+    "en": "UK",
+    "ru": "СК"
+  },
+  "Ireland": {
+    "en": "Ireland",
+    "ru": "Ирландия",
+  },
 }

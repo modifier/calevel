@@ -4,9 +4,13 @@ import {unsafeHTML} from "lit/directives/unsafe-html.js";
 import Map from '../assets/eu.svg?raw';
 import countries from "../data/countries";
 import levels from "../data/levels";
+import {Language} from "../data/langs";
 
 @customElement('ca-map')
 export default class CaMap extends LitElement {
+  @property()
+  language!: Language;
+
   @property({ type: Object })
   private levelsByCountry: Record<string, string> = {};
 
@@ -22,6 +26,7 @@ export default class CaMap extends LitElement {
         ${unsafeHTML(Map)}
       </div>
       <ca-select-level 
+        language="${this.language}"
         country="${this.selectedCountry}" 
         position="${JSON.stringify(this.position)}"></ca-select-level>
     `
@@ -47,8 +52,11 @@ export default class CaMap extends LitElement {
 
   protected updated(changedProperties: PropertyValues): void {
     if (changedProperties.has('levelsByCountry')) {
-      this.updateCountryLabels();
       this.updateCountryColors();
+    }
+
+    if (changedProperties.has('levelsByCountry') || changedProperties.has('language')) {
+      this.updateCountryLabels();
     }
   }
 
@@ -67,7 +75,7 @@ export default class CaMap extends LitElement {
   private updateCountryLabels() {
     for (const [countryKey, countryName] of Object.entries(countries)) {
       const element = this.renderRoot.querySelector(`[data-country-name=${countryKey}]`) as SVGPathElement;
-      element.innerHTML = countryName;
+      element.innerHTML = countryName[this.language];
     }
   }
 

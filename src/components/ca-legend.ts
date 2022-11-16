@@ -1,16 +1,20 @@
 import { LitElement, css, html } from 'lit';
-import { customElement } from 'lit/decorators.js';
+import { customElement, property } from 'lit/decorators.js';
 import levels from "../data/levels";
+import {Language} from "../data/langs";
 
 @customElement('ca-legend')
 export class CaLegend extends LitElement {
+  @property()
+  language!: Language;
+
   render() {
     return html`
       <div>
         <ul>
           ${levels.map(({ text, level, color }) => {
             return html`<li style="--ca-level-color: ${color}">
-                <span>${text}</span>
+                <span>${text[this.language]}</span>
                 <span>${level}pts</span>
               </li>`
           })}

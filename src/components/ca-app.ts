@@ -7,7 +7,8 @@ import '../components/ca-level-label';
 import '../components/ca-legend';
 import '../components/ca-map';
 import '../components/ca-lang-picker';
-import languages from "../data/langs";
+import {Language} from "../data/langs";
+import labels from "../data/labels";
 
 @customElement('ca-app')
 export class CaApp extends LitElement {
@@ -15,7 +16,7 @@ export class CaApp extends LitElement {
   private storedLevelsByCountry: Record<string, string> | null = null;
 
   @state()
-  private language: keyof typeof languages = 'en';
+  private language: Language = 'en';
 
   private _levelsByCountry: Record<string, string> = {};
 
@@ -52,12 +53,16 @@ export class CaApp extends LitElement {
     const isDirty = Object.values(this.levelsByCountry).some((level) => level !== 'default');
 
     return html`
-      <ca-level-label level="${totalLevel}"></ca-level-label>
-      <ca-legend></ca-legend>
-      <ca-map levelsByCountry="${JSON.stringify(this.levelsByCountry)}" @change="${this.handleLevelChange}"></ca-map>
+      <ca-level-label language="${this.language}" level="${totalLevel}"></ca-level-label>
+      <ca-legend language="${this.language}"></ca-legend>
+      <ca-map language="${this.language}"
+        levelsByCountry="${JSON.stringify(this.levelsByCountry)}"
+         @change="${this.handleLevelChange}"></ca-map>
       <nav>
-        ${isDirty ? html`<button @click="${this.handleReset}">Reset</button>` : ''}
-        ${this.storedLevelsByCountry ? html`<button @click="${this.handleRestore}">Restore</button>` : ''}
+        ${isDirty ? html`<button @click="${this.handleReset}">${labels.reset[this.language]}</button>` : ''}
+        ${this.storedLevelsByCountry ? 
+          html`<button @click="${this.handleRestore}">${labels.restore[this.language]}</button>`
+          : ''}
         <ca-lang-picker language="${this.language}" @selectLang="${this.handleLanguageChange}"></ca-lang-picker>
       </nav>
     `
@@ -74,7 +79,7 @@ export class CaApp extends LitElement {
     }
   }
 
-  private handleLanguageChange({ detail: { lang }}: CustomEvent<{ lang: keyof typeof languages}>) {
+  private handleLanguageChange({ detail: { lang }}: CustomEvent<{ lang: Language}>) {
     this.language = lang;
   }
 

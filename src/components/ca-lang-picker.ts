@@ -1,11 +1,11 @@
 import {css, html, LitElement } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
-import languages from '../data/langs';
+import {Language, languages} from '../data/langs';
 
 @customElement('ca-lang-picker')
 export default class CaLangPicker extends LitElement {
   @property()
-  private language: keyof typeof languages = 'en';
+  private language!: Language;
 
   @state()
   private isShown = false;
