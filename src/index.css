@@ -33,6 +33,10 @@ body {
   background-color: rgb(215, 199, 182);
 }
 
+body.backdrop {
+  overflow: hidden;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

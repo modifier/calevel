@@ -110,10 +110,12 @@ export class CaApp extends LitElement {
 
   private handleShare() {
     this.sharing = true;
+    document.body.classList.add('backdrop');
   }
 
   private handleCloseShare() {
     this.sharing = false;
+    document.body.classList.remove('backdrop');
   }
 
   static styles = css`
@@ -164,16 +166,20 @@ export class CaApp extends LitElement {
       justify-content: center;
       flex-direction: column;
       gap: 16px;
+      padding: 16px;
+      overflow: auto;
     }
     
     .canvas {
       flex: 0 1 auto;
-      height: 480px;
+      max-height: 480px;
+      max-width: 100%;
     }
     
     .canvas canvas {
       width: auto !important;
       height: auto !important;
+      max-width: 100%;
       max-height: 100%; 
       box-shadow: 0 5px 20px rgb(0 0 0 / 10%);
     }
@@ -186,6 +192,12 @@ export class CaApp extends LitElement {
       box-shadow: -1px -1px 1px inset rgb(0 0 0 / 10%);
       font-size: 0.9em;
       padding: 4px 8px;
+      margin: 1em 0;
+      display: inline-block;
+    }
+    
+    p {
+      margin: 0;
     }
   `
 }
