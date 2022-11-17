@@ -8,14 +8,19 @@ import '../components/ca-legend';
 import '../components/ca-map';
 import '../components/ca-lang-picker';
 import '../components/ca-share';
+import '../components/ca-shared';
 import {Locale} from "../data/locales";
 import labels from "../data/labels";
 import {getDefaultLocale} from "../utils/locale";
+import {getSavedCountries, getSharedState} from "../utils/state-encoder";
 
 @customElement('ca-app')
 export class CaApp extends LitElement {
   @state()
   private storedLevelsByCountry: Record<string, string> | null = null;
+
+  @state()
+  private savedBeforeSharingLevelsByCountry: Record<string, string> | null = null;
 
   @state()
   private language: Locale;
@@ -41,13 +46,12 @@ export class CaApp extends LitElement {
     super();
 
     this.language = getDefaultLocale();
-
-    const savedCountries = localStorage.getItem('countries');
-    if (savedCountries) {
-      try {
-        this._levelsByCountry = JSON.parse(savedCountries);
-      }
-      catch (e) {}
+    this._levelsByCountry = getSavedCountries();
+    const sharedState = getSharedState();
+    if (sharedState) {
+      this.savedBeforeSharingLevelsByCountry = this.levelsByCountry;
+      this._levelsByCountry = sharedState;
+      document.body.classList.add('backdrop');
     }
   }
 
@@ -59,8 +63,10 @@ export class CaApp extends LitElement {
 
     const isDirty = Object.values(this.levelsByCountry).some((level) => level !== 'default');
 
+    const isShowingBackdrop = this.sharing || this.savedBeforeSharingLevelsByCountry;
+
     return html`
-      <div class="ca-map-container ${this.sharing ? 'ca-map-container--sharing' : ''}">
+      <div class="ca-map-container ${isShowingBackdrop ? 'ca-map-container--sharing' : ''}">
         <ca-level-label language="${this.language}" level="${totalLevel}"></ca-level-label>
         <ca-legend language="${this.language}"></ca-legend>
         <ca-map language="${this.language}"
@@ -79,6 +85,10 @@ export class CaApp extends LitElement {
         language="${this.language}"
         @close="${this.handleCloseShare}" 
         levelsByCountry="${JSON.stringify(this.levelsByCountry)}"></ca-share>` : nothing}
+      ${this.savedBeforeSharingLevelsByCountry ? html`<ca-shared
+        language="${this.language}"
+        @close="${this.handleCloseShared}"
+        ></ca-shared>` : nothing}
     `
   }
 
@@ -116,6 +126,13 @@ export class CaApp extends LitElement {
   private handleCloseShare() {
     this.sharing = false;
     document.body.classList.remove('backdrop');
+  }
+
+  private handleCloseShared() {
+    this._levelsByCountry = this.savedBeforeSharingLevelsByCountry || {};
+    this.savedBeforeSharingLevelsByCountry = null;
+    document.body.classList.remove('backdrop');
+    window.history.pushState({}, document.title, '/');
   }
 
   static styles = css`

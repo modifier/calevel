@@ -37,3 +37,26 @@ export function decodeState(code: string): Record<string, string> {
 
   return state;
 }
+
+export function getSharedState(): Record<string, string> | null {
+  const params = (new URL(document.location)).searchParams;
+  const code = params.get('code');
+
+  if (!code) {
+    return null;
+  }
+
+  return decodeState(code);
+}
+
+export function getSavedCountries(): Record<string, string> {
+  const savedCountries = localStorage.getItem('countries');
+  if (savedCountries) {
+    try {
+      return JSON.parse(savedCountries);
+    }
+    catch (e) {}
+  }
+
+  return {};
+}

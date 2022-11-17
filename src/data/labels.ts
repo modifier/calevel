@@ -30,5 +30,13 @@ export default {
   shareTextAfter: {
     "en": "Or, you can simply share an image",
     "ru": "Ну или просто поделитесь картинкой",
+  },
+  sharedText: {
+    "en": "Your friend shared with you his Central Asia level:",
+    "ru": "Ваш друг поделился своим уровнем Центральной Азии:",
+  },
+  drawOwn: {
+    "en": "Figure out my level",
+    "ru": "Определить свой уровень",
   }
 };
