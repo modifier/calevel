@@ -1,10 +1,20 @@
-export default {
-  "UK": {
+import {Language} from "./langs";
+
+export const sortedCountries = [
+  {
+    "key": "UK",
     "en": "UK",
     "ru": "СК"
   },
-  "Ireland": {
+  {
+    key: "Ireland",
     "en": "Ireland",
     "ru": "Ирландия",
-  },
-}
+  }
+];
+
+export const countries = sortedCountries.reduce((acc, { key, ...rest }) => {
+  acc[key] = rest;
+
+  return acc;
+}, {} as Record<string, Record<Language, string>>);

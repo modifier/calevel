@@ -12,10 +12,10 @@ export class CaLegend extends LitElement {
     return html`
       <div>
         <ul>
-          ${levels.map(({ text, level, color }) => {
+          ${levels.map(({ text, value, color }) => {
             return html`<li style="--ca-level-color: ${color}">
                 <span>${text[this.language]}</span>
-                <span>${level}pts</span>
+                <span>${value}pts</span>
               </li>`
           })}
         </ul>

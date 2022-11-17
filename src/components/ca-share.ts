@@ -3,20 +3,37 @@ import { customElement, property } from "lit/decorators.js";
 import {Language} from "../data/langs";
 import html2canvas from "html2canvas";
 import labels from "../data/labels";
+import {encodeState} from "../utils/state-encoder";
 
 @customElement('ca-share')
 export default class CaShare extends LitElement {
   @property()
   private language!: Language;
 
+  @property({ type: Object })
+  private levelsByCountry!: Record<string, string>;
+
   render() {
     return html`
       <div class="ca-share">
+        <div>
+          <p>${labels.shareTextBefore[this.language]}</p>
+          <code>${this.shareUrl}</code>
+          <p>${labels.shareTextAfter[this.language]}</p>
+        </div>
         <div class="canvas"></div>
         <button class="primary" @click="${this.handleSave}">${labels.savePicture[this.language]}</button>
         <button @click="${this.handleClose}">${labels.close[this.language]}</button>
       </div>
     `
+  }
+
+  get shareUrl() {
+    return `${document.location.origin}${document.location.pathname}?code=${this.getCode()}`;
+  }
+
+  private getCode() {
+    return encodeState(this.levelsByCountry);
   }
 
   protected firstUpdated(): void {

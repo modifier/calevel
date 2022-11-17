@@ -50,8 +50,8 @@ export class CaApp extends LitElement {
 
   render() {
     const totalLevel = Object.values(this.levelsByCountry).reduce((a, name) => {
-      const level  = levels.find(level => level.name === name);
-      return (level?.level || 0) + a;
+      const level  = levels.find(level => level.key === name);
+      return (level?.value || 0) + a;
     }, 0);
 
     const isDirty = Object.values(this.levelsByCountry).some((level) => level !== 'default');
@@ -72,17 +72,20 @@ export class CaApp extends LitElement {
         <ca-lang-picker language="${this.language}" @selectLang="${this.handleLanguageChange}"></ca-lang-picker>
         <button class="primary" @click="${this.handleShare}">${labels.share[this.language]}</button>
       </nav>
-      ${this.sharing ? html`<ca-share @close="${this.handleCloseShare}" language="${this.language}"></ca-share>` : nothing}
+      ${this.sharing ? html`<ca-share 
+        language="${this.language}"
+        @close="${this.handleCloseShare}" 
+        levelsByCountry="${JSON.stringify(this.levelsByCountry)}"></ca-share>` : nothing}
     `
   }
 
-  private handleLevelChange({ detail: { name, country }}: CaSelectEvent) {
+  private handleLevelChange({ detail: { levelKey, country }}: CaSelectEvent) {
     this.levelsByCountry = {
       ...this.levelsByCountry,
-      [country]: name,
+      [country]: levelKey,
     };
 
-    if (name !== 'default') {
+    if (levelKey !== 'default') {
       this.storedLevelsByCountry = null;
     }
   }
@@ -169,6 +172,16 @@ export class CaApp extends LitElement {
       height: auto !important;
       max-height: 100%; 
       box-shadow: 0 5px 20px rgb(0 0 0 / 10%);
+    }
+    
+    code {
+      background-color: #eee;
+      font-family: Consolas, monospace;
+      border-radius: 4px;
+      width: 100%;
+      box-shadow: -1px -1px 1px inset rgb(0 0 0 / 10%);
+      font-size: 0.9em;
+      padding: 4px 8px;
     }
   `
 }

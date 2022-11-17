@@ -22,5 +22,13 @@ export default {
   close: {
     "en": "Close",
     "ru": "Закрыть"
+  },
+  shareTextBefore: {
+    "en": "Copy the following URL and share it with your friends!",
+    "ru": "Скопируйте эту ссылку и поделитесь ею с друзьями!",
+  },
+  shareTextAfter: {
+    "en": "Or, you can simply share an image",
+    "ru": "Ну или просто поделитесь картинкой",
   }
 };

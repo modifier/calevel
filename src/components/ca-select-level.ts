@@ -4,7 +4,7 @@ import { customElement, property } from 'lit/decorators.js';
 import levels from '../data/levels';
 import {Language} from "../data/langs";
 
-type CaSelectDetail = { country: string; name: string; };
+type CaSelectDetail = { country: string; levelKey: string; };
 
 export class CaSelectEvent extends CustomEvent<CaSelectDetail> {
 
@@ -32,8 +32,8 @@ export class CaSelectLevel extends LitElement {
       <div style=${styleMap(styles)}>
         <h2>${this.country}</h2>
         <ul>
-          ${levels.map(({ name, text, color }) => {
-            return html`<li @click="${this.handleClick}" data-name="${name}" style="--ca-level-color: ${color}">
+          ${levels.map(({ key, text, color }) => {
+            return html`<li @click="${this.handleClick}" data-key="${key}" style="--ca-level-color: ${color}">
               ${text[this.language]}
             </li>`
           })}
@@ -43,9 +43,9 @@ export class CaSelectLevel extends LitElement {
   }
 
   private handleClick({ target }: MouseEvent) {
-    const name = (target as HTMLLIElement).dataset.name!;
+    const levelKey = (target as HTMLLIElement).dataset.key!;
 
-    this.dispatchEvent(new CaSelectEvent("change", { bubbles: true, composed: true, detail: { name, country: this.country! } }));
+    this.dispatchEvent(new CaSelectEvent("change", { bubbles: true, composed: true, detail: { levelKey, country: this.country! } }));
   }
 
   static styles = css`

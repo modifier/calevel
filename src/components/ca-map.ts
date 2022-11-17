@@ -2,7 +2,7 @@ import {css, html, LitElement, PropertyValues} from "lit";
 import {customElement, property} from "lit/decorators.js";
 import {unsafeHTML} from "lit/directives/unsafe-html.js";
 import Map from '../assets/eu.svg?raw';
-import countries from "../data/countries";
+import {countries} from "../data/countries";
 import levels from "../data/levels";
 import {Language} from "../data/langs";
 
@@ -81,7 +81,7 @@ export default class CaMap extends LitElement {
 
   private updateCountryColors() {
     for (const country of Object.keys(countries)) {
-      const level = levels.find(level => level.name === (this.levelsByCountry[country] || 'default'));
+      const level = levels.find(level => level.key === (this.levelsByCountry[country] || 'default'));
       const elements = Array.from(this.renderRoot.querySelectorAll(`[data-country=${country}]`)) as SVGPathElement[];
 
       for (const element of elements) {
