@@ -8,8 +8,9 @@ import '../components/ca-legend';
 import '../components/ca-map';
 import '../components/ca-lang-picker';
 import '../components/ca-share';
-import {Language} from "../data/langs";
+import {Locale} from "../data/locales";
 import labels from "../data/labels";
+import {getDefaultLocale} from "../utils/locale";
 
 @customElement('ca-app')
 export class CaApp extends LitElement {
@@ -17,7 +18,7 @@ export class CaApp extends LitElement {
   private storedLevelsByCountry: Record<string, string> | null = null;
 
   @state()
-  private language: Language = 'en';
+  private language: Locale;
 
   @state()
   private sharing = false;
@@ -38,6 +39,8 @@ export class CaApp extends LitElement {
 
   constructor() {
     super();
+
+    this.language = getDefaultLocale();
 
     const savedCountries = localStorage.getItem('countries');
     if (savedCountries) {
@@ -90,8 +93,9 @@ export class CaApp extends LitElement {
     }
   }
 
-  private handleLanguageChange({ detail: { lang }}: CustomEvent<{ lang: Language}>) {
+  private handleLanguageChange({ detail: { lang }}: CustomEvent<{ lang: Locale}>) {
     this.language = lang;
+    localStorage.setItem("lang", lang);
   }
 
   private handleReset() {

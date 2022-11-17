@@ -1,6 +1,6 @@
 import {html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import {Language} from "../data/langs";
+import {Locale} from "../data/locales";
 import html2canvas from "html2canvas";
 import labels from "../data/labels";
 import {encodeState} from "../utils/state-encoder";
@@ -8,7 +8,7 @@ import {encodeState} from "../utils/state-encoder";
 @customElement('ca-share')
 export default class CaShare extends LitElement {
   @property()
-  private language!: Language;
+  private language!: Locale;
 
   @property({ type: Object })
   private levelsByCountry!: Record<string, string>;

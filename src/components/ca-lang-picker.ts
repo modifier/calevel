@@ -1,11 +1,11 @@
 import {css, html, LitElement } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
-import {Language, languages} from '../data/langs';
+import {Locale, locales} from '../data/locales';
 
 @customElement('ca-lang-picker')
 export default class CaLangPicker extends LitElement {
   @property()
-  private language!: Language;
+  private language!: Locale;
 
   @state()
   private isShown = false;
@@ -15,7 +15,7 @@ export default class CaLangPicker extends LitElement {
       <div class="picker">
         <div class="dropdown ${this.isShown ? 'dropdown--shown' : ''}">
           <ul>
-            ${Object.entries(languages).map(([key, name]) => {
+            ${Object.entries(locales).map(([key, name]) => {
               return html`<li 
                 data-lang="${key}" 
                 class="${this.language === key ? 'selected-lang' : ''}"
@@ -24,7 +24,7 @@ export default class CaLangPicker extends LitElement {
             })}
           </ul>
         </div>
-        <button @click="${this.menuDropHandler}">${languages[this.language]}</button>
+        <button @click="${this.menuDropHandler}">${locales[this.language]}</button>
       </div>
     `;
   }

@@ -1,12 +1,12 @@
 import { LitElement, css, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import levels from "../data/levels";
-import {Language} from "../data/langs";
+import {Locale} from "../data/locales";
 
 @customElement('ca-legend')
 export class CaLegend extends LitElement {
   @property()
-  language!: Language;
+  language!: Locale;
 
   render() {
     return html`

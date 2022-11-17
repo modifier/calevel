@@ -1,4 +1,4 @@
-import {Language} from "./langs";
+import {Locale} from "./locales";
 
 export const sortedCountries = [
   {
@@ -17,4 +17,4 @@ export const countries = sortedCountries.reduce((acc, { key, ...rest }) => {
   acc[key] = rest;
 
   return acc;
-}, {} as Record<string, Record<Language, string>>);
+}, {} as Record<string, Record<Locale, string>>);

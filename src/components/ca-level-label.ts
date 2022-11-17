@@ -1,12 +1,12 @@
 import { LitElement, css, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import labels from "../data/labels";
-import {Language} from "../data/langs";
+import {Locale} from "../data/locales";
 
 @customElement('ca-level-label')
 export class CaLevelLabel extends LitElement {
   @property()
-  language!: Language;
+  language!: Locale;
 
   @property()
   level: number = 0;

@@ -4,12 +4,12 @@ import {unsafeHTML} from "lit/directives/unsafe-html.js";
 import Map from '../assets/eu.svg?raw';
 import {countries} from "../data/countries";
 import levels from "../data/levels";
-import {Language} from "../data/langs";
+import {Locale} from "../data/locales";
 
 @customElement('ca-map')
 export default class CaMap extends LitElement {
   @property()
-  language!: Language;
+  language!: Locale;
 
   @property({ type: Object })
   private levelsByCountry: Record<string, string> = {};
