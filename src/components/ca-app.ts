@@ -1,26 +1,27 @@
-import { LitElement, css, html, nothing } from 'lit';
-import { customElement, state } from 'lit/decorators.js';
-import './ca-select-level';
-import levels from '../data/levels';
-import {CaSelectEvent} from "./ca-select-level";
-import '../components/ca-level-label';
-import '../components/ca-legend';
-import '../components/ca-map';
-import '../components/ca-lang-picker';
-import '../components/ca-share';
-import '../components/ca-shared';
-import {Locale} from "../data/locales";
+import { LitElement, css, html, nothing } from "lit";
+import { customElement, state } from "lit/decorators.js";
+import "./ca-select-level";
+import levels from "../data/levels";
+import { CaSelectEvent } from "./ca-select-level";
+import "../components/ca-level-label";
+import "../components/ca-legend";
+import "../components/ca-map";
+import "../components/ca-lang-picker";
+import "../components/ca-share";
+import "../components/ca-shared";
+import { Locale } from "../data/locales";
 import labels from "../data/labels";
-import {getDefaultLocale} from "../utils/locale";
-import {getSavedCountries, getSharedState} from "../utils/state-encoder";
+import { getDefaultLocale } from "../utils/locale";
+import { getSavedCountries, getSharedState } from "../utils/state-encoder";
 
-@customElement('ca-app')
+@customElement("ca-app")
 export class CaApp extends LitElement {
   @state()
   private storedLevelsByCountry: Record<string, string> | null = null;
 
   @state()
-  private savedBeforeSharingLevelsByCountry: Record<string, string> | null = null;
+  private savedBeforeSharingLevelsByCountry: Record<string, string> | null =
+    null;
 
   @state()
   private language: Locale;
@@ -33,8 +34,8 @@ export class CaApp extends LitElement {
   set levelsByCountry(val: Record<string, string>) {
     const oldVal = this._levelsByCountry;
     this._levelsByCountry = val;
-    localStorage.setItem('countries', JSON.stringify(val));
-    this.requestUpdate('levelsByCountry', oldVal);
+    localStorage.setItem("countries", JSON.stringify(val));
+    this.requestUpdate("levelsByCountry", oldVal);
   }
 
   @state()
@@ -51,59 +52,89 @@ export class CaApp extends LitElement {
     if (sharedState) {
       this.savedBeforeSharingLevelsByCountry = this.levelsByCountry;
       this._levelsByCountry = sharedState;
-      document.body.classList.add('backdrop');
+      document.body.classList.add("backdrop");
     }
   }
 
   render() {
     const totalLevel = Object.values(this.levelsByCountry).reduce((a, name) => {
-      const level  = levels.find(level => level.key === name);
+      const level = levels.find((level) => level.key === name);
       return (level?.value || 0) + a;
     }, 0);
 
-    const isDirty = Object.values(this.levelsByCountry).some((level) => level !== 'default');
+    const isDirty = Object.values(this.levelsByCountry).some(
+      (level) => level !== "default"
+    );
 
-    const isShowingBackdrop = this.sharing || this.savedBeforeSharingLevelsByCountry;
+    const isShowingBackdrop =
+      this.sharing || this.savedBeforeSharingLevelsByCountry;
 
     return html`
-      <div class="ca-map-container ${isShowingBackdrop ? 'ca-map-container--sharing' : ''}">
-        <ca-level-label language="${this.language}" level="${totalLevel}"></ca-level-label>
+      <div
+        class="ca-map-container ${isShowingBackdrop
+          ? "ca-map-container--sharing"
+          : ""}"
+      >
+        <ca-level-label
+          language="${this.language}"
+          level="${totalLevel}"
+        ></ca-level-label>
         <ca-legend language="${this.language}"></ca-legend>
-        <ca-map language="${this.language}"
+        <ca-map
+          language="${this.language}"
           levelsByCountry="${JSON.stringify(this.levelsByCountry)}"
-           @change="${this.handleLevelChange}"></ca-map>
+          @change="${this.handleLevelChange}"
+        ></ca-map>
       </div>
       <nav>
-        ${isDirty ? html`<button class="reset" @click="${this.handleReset}">${labels.reset[this.language]}</button>` : nothing}
-        ${this.storedLevelsByCountry ? 
-          html`<button @click="${this.handleRestore}">${labels.restore[this.language]}</button>`
+        ${isDirty
+          ? html`<button class="reset" @click="${this.handleReset}">
+              ${labels.reset[this.language]}
+            </button>`
           : nothing}
-        <ca-lang-picker language="${this.language}" @selectLang="${this.handleLanguageChange}"></ca-lang-picker>
-        <button class="primary" @click="${this.handleShare}">${labels.share[this.language]}</button>
+        ${this.storedLevelsByCountry
+          ? html`<button @click="${this.handleRestore}">
+              ${labels.restore[this.language]}
+            </button>`
+          : nothing}
+        <ca-lang-picker
+          language="${this.language}"
+          @selectLang="${this.handleLanguageChange}"
+        ></ca-lang-picker>
+        <button class="primary" @click="${this.handleShare}">
+          ${labels.share[this.language]}
+        </button>
       </nav>
-      ${this.sharing ? html`<ca-share 
-        language="${this.language}"
-        @close="${this.handleCloseShare}" 
-        levelsByCountry="${JSON.stringify(this.levelsByCountry)}"></ca-share>` : nothing}
-      ${this.savedBeforeSharingLevelsByCountry ? html`<ca-shared
-        language="${this.language}"
-        @close="${this.handleCloseShared}"
-        ></ca-shared>` : nothing}
-    `
+      ${this.sharing
+        ? html`<ca-share
+            language="${this.language}"
+            @close="${this.handleCloseShare}"
+            levelsByCountry="${JSON.stringify(this.levelsByCountry)}"
+          ></ca-share>`
+        : nothing}
+      ${this.savedBeforeSharingLevelsByCountry
+        ? html`<ca-shared
+            language="${this.language}"
+            @close="${this.handleCloseShared}"
+          ></ca-shared>`
+        : nothing}
+    `;
   }
 
-  private handleLevelChange({ detail: { levelKey, country }}: CaSelectEvent) {
+  private handleLevelChange({ detail: { levelKey, country } }: CaSelectEvent) {
     this.levelsByCountry = {
       ...this.levelsByCountry,
       [country]: levelKey,
     };
 
-    if (levelKey !== 'default') {
+    if (levelKey !== "default") {
       this.storedLevelsByCountry = null;
     }
   }
 
-  private handleLanguageChange({ detail: { lang }}: CustomEvent<{ lang: Locale}>) {
+  private handleLanguageChange({
+    detail: { lang },
+  }: CustomEvent<{ lang: Locale }>) {
     this.language = lang;
     localStorage.setItem("lang", lang);
   }
@@ -120,19 +151,19 @@ export class CaApp extends LitElement {
 
   private handleShare() {
     this.sharing = true;
-    document.body.classList.add('backdrop');
+    document.body.classList.add("backdrop");
   }
 
   private handleCloseShare() {
     this.sharing = false;
-    document.body.classList.remove('backdrop');
+    document.body.classList.remove("backdrop");
   }
 
   private handleCloseShared() {
     this._levelsByCountry = this.savedBeforeSharingLevelsByCountry || {};
     this.savedBeforeSharingLevelsByCountry = null;
-    document.body.classList.remove('backdrop');
-    window.history.pushState({}, document.title, '/');
+    document.body.classList.remove("backdrop");
+    window.history.pushState({}, document.title, "/");
   }
 
   static styles = css`
@@ -141,16 +172,16 @@ export class CaApp extends LitElement {
       height: 100%;
       margin: 0 auto;
     }
-    
+
     .ca-map-container {
       background-color: rgb(215, 199, 182);
     }
-    
+
     .ca-map-container--sharing {
       width: 800px;
       height: 600px;
     }
-    
+
     button {
       background-color: #fff;
       box-shadow: 0 0 0 2px #111;
@@ -158,12 +189,12 @@ export class CaApp extends LitElement {
       border-radius: 3px;
       padding: 6px 8px;
     }
-    
+
     button.primary {
       padding-inline: 16px;
       background-color: #ffb;
     }
-    
+
     nav {
       position: absolute;
       bottom: 0;
@@ -173,7 +204,7 @@ export class CaApp extends LitElement {
       flex-direction: row;
       gap: 16px;
     }
-    
+
     .ca-share {
       position: fixed;
       inset: 0 0 0 0;
@@ -186,21 +217,21 @@ export class CaApp extends LitElement {
       padding: 16px;
       overflow: auto;
     }
-    
+
     .canvas {
       flex: 0 1 auto;
       max-height: 480px;
       max-width: 100%;
     }
-    
+
     .canvas canvas {
       width: auto !important;
       height: auto !important;
       max-width: 100%;
-      max-height: 100%; 
+      max-height: 100%;
       box-shadow: 0 5px 20px rgb(0 0 0 / 10%);
     }
-    
+
     code {
       background-color: #eee;
       font-family: Consolas, monospace;
@@ -212,15 +243,15 @@ export class CaApp extends LitElement {
       margin: 1em 0;
       display: inline-block;
     }
-    
+
     p {
       margin: 0;
     }
-  `
+  `;
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'ca-map': CaApp,
+    "ca-map": CaApp;
   }
 }

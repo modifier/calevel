@@ -1,4 +1,4 @@
-import {sortedCountries} from "../data/countries";
+import { sortedCountries } from "../data/countries";
 import levels from "../data/levels";
 
 const RADIX = 16;
@@ -7,8 +7,8 @@ export function encodeState(levelsByCountry: Record<string, string>): string {
   let sortedState = "";
   const radix = levels.length;
   for (const country of sortedCountries) {
-    const level = levelsByCountry[country.key] || 'default';
-    const levelIndex = levels.findIndex(item => item.key === level);
+    const level = levelsByCountry[country.key] || "default";
+    const levelIndex = levels.findIndex((item) => item.key === level);
     const levelLetter = Number(levelIndex).toString(radix);
 
     sortedState += levelLetter;
@@ -29,7 +29,7 @@ export function decodeState(code: string): Record<string, string> {
     const levelIndex = parseInt(levelLetter, levels.length);
     const level = levels[levelIndex];
 
-    if (level.key !== 'default') {
+    if (level.key !== "default") {
       const country = sortedCountries[i];
       state[country.key] = level.key;
     }
@@ -39,8 +39,8 @@ export function decodeState(code: string): Record<string, string> {
 }
 
 export function getSharedState(): Record<string, string> | null {
-  const params = (new URL(document.location)).searchParams;
-  const code = params.get('code');
+  const params = new URL(document.location.toString()).searchParams;
+  const code = params.get("code");
 
   if (!code) {
     return null;
@@ -50,12 +50,11 @@ export function getSharedState(): Record<string, string> | null {
 }
 
 export function getSavedCountries(): Record<string, string> {
-  const savedCountries = localStorage.getItem('countries');
+  const savedCountries = localStorage.getItem("countries");
   if (savedCountries) {
     try {
       return JSON.parse(savedCountries);
-    }
-    catch (e) {}
+    } catch (e) {}
   }
 
   return {};

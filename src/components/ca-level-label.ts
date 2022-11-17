@@ -1,9 +1,9 @@
-import { LitElement, css, html } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { LitElement, css, html } from "lit";
+import { customElement, property } from "lit/decorators.js";
 import labels from "../data/labels";
-import {Locale} from "../data/locales";
+import { Locale } from "../data/locales";
 
-@customElement('ca-level-label')
+@customElement("ca-level-label")
 export class CaLevelLabel extends LitElement {
   @property()
   language!: Locale;
@@ -27,6 +27,6 @@ export class CaLevelLabel extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'ca-level-label': CaLevelLabel,
+    "ca-level-label": CaLevelLabel;
   }
 }

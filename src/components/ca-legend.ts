@@ -1,9 +1,9 @@
-import { LitElement, css, html } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { LitElement, css, html } from "lit";
+import { customElement, property } from "lit/decorators.js";
 import levels from "../data/levels";
-import {Locale} from "../data/locales";
+import { Locale } from "../data/locales";
 
-@customElement('ca-legend')
+@customElement("ca-legend")
 export class CaLegend extends LitElement {
   @property()
   language!: Locale;
@@ -14,9 +14,9 @@ export class CaLegend extends LitElement {
         <ul>
           ${levels.map(({ text, value, color }) => {
             return html`<li style="--ca-level-color: ${color}">
-                <span>${text[this.language]}</span>
-                <span>${value}pts</span>
-              </li>`
+              <span>${text[this.language]}</span>
+              <span>${value}pts</span>
+            </li>`;
           })}
         </ul>
       </div>
@@ -32,13 +32,13 @@ export class CaLegend extends LitElement {
       border-radius: 4px;
       border: 2px solid black;
     }
-    
+
     ul {
       margin: 0;
       padding: 0;
       list-style: none;
     }
-    
+
     li {
       margin: 0;
       background-color: var(--ca-level-color);

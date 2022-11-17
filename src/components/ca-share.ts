@@ -1,11 +1,11 @@
-import {html, LitElement } from "lit";
+import { html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import {Locale} from "../data/locales";
+import { Locale } from "../data/locales";
 import html2canvas from "html2canvas";
 import labels from "../data/labels";
-import {encodeState} from "../utils/state-encoder";
+import { encodeState } from "../utils/state-encoder";
 
-@customElement('ca-share')
+@customElement("ca-share")
 export default class CaShare extends LitElement {
   @property()
   private language!: Locale;
@@ -22,14 +22,20 @@ export default class CaShare extends LitElement {
           <p>${labels.shareTextAfter[this.language]}</p>
         </div>
         <div class="canvas"></div>
-        <button class="primary" @click="${this.handleSave}">${labels.savePicture[this.language]}</button>
-        <button @click="${this.handleClose}">${labels.close[this.language]}</button>
+        <button class="primary" @click="${this.handleSave}">
+          ${labels.savePicture[this.language]}
+        </button>
+        <button @click="${this.handleClose}">
+          ${labels.close[this.language]}
+        </button>
       </div>
-    `
+    `;
   }
 
   get shareUrl() {
-    return `${document.location.origin}${document.location.pathname}?code=${this.getCode()}`;
+    return `${document.location.origin}${
+      document.location.pathname
+    }?code=${this.getCode()}`;
   }
 
   private getCode() {
@@ -37,19 +43,20 @@ export default class CaShare extends LitElement {
   }
 
   protected firstUpdated(): void {
-    let mapContainer = this.renderRoot.parentNode!.querySelector(".ca-map-container");
-    html2canvas(mapContainer as HTMLDivElement).then(canvas => {
-      this.renderRoot.querySelector('.canvas')!.appendChild(canvas);
+    let mapContainer =
+      this.renderRoot.parentNode!.querySelector(".ca-map-container");
+    html2canvas(mapContainer as HTMLDivElement).then((canvas) => {
+      this.renderRoot.querySelector(".canvas")!.appendChild(canvas);
     });
   }
 
   private handleSave() {
-    const downloadLink = document.createElement('a');
-    downloadLink.setAttribute('download', 'CentralAsia.png');
-    const canvas = this.renderRoot.querySelector('canvas') as HTMLCanvasElement;
-    canvas.toBlob(function(blob) {
+    const downloadLink = document.createElement("a");
+    downloadLink.setAttribute("download", "CentralAsia.png");
+    const canvas = this.renderRoot.querySelector("canvas") as HTMLCanvasElement;
+    canvas.toBlob(function (blob) {
       const url = URL.createObjectURL(blob as Blob);
-      downloadLink.setAttribute('href', url);
+      downloadLink.setAttribute("href", url);
       downloadLink.click();
     });
   }

@@ -1,16 +1,16 @@
-import {Locale} from "./locales";
+import { Locale } from "./locales";
 
 export const sortedCountries = [
   {
-    "key": "UK",
-    "en": "UK",
-    "ru": "СК"
+    key: "UK",
+    en: "UK",
+    ru: "СК",
   },
   {
     key: "Ireland",
-    "en": "Ireland",
-    "ru": "Ирландия",
-  }
+    en: "Ireland",
+    ru: "Ирландия",
+  },
 ];
 
 export const countries = sortedCountries.reduce((acc, { key, ...rest }) => {
