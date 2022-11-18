@@ -173,13 +173,10 @@ export class CaApp extends LitElement {
       margin: 0 auto;
     }
 
-    .ca-map-container {
-      background-color: rgb(215, 199, 182);
-    }
-
     .ca-map-container--sharing {
       width: 800px;
       height: 600px;
+      background-color: rgb(215, 199, 182);
     }
 
     button {
