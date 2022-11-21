@@ -1,7 +1,7 @@
 import { css, html, LitElement, PropertyValues } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
-import Map from "../assets/eu.svg?raw";
+import Map from "../assets/map.svg?raw";
 import { countries } from "../data/countries";
 import levels from "../data/levels";
 import { Locale } from "../data/locales";
@@ -83,7 +83,11 @@ export default class CaMap extends LitElement {
       const element = this.renderRoot.querySelector(
         `[data-country-name=${countryKey}]`
       ) as SVGPathElement;
-      element.innerHTML = countryName[this.language];
+      if (element) {
+        element.innerHTML = countryName[this.language];
+      } else {
+        console.log('Could not find label for ', countryKey)
+      }
     }
   }
 
@@ -109,6 +113,13 @@ export default class CaMap extends LitElement {
       margin: 0 auto;
       display: flex;
       flex-direction: column;
+    }
+    
+    svg {
+      height: 100%;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 2em;
     }
   `;
 }
