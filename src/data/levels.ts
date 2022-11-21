@@ -6,15 +6,57 @@ const levels = [
       ru: "Никогда тут не был",
     },
     value: 0,
+    position: 6,
     color: "#FFF",
+  },
+  {
+    key: "wannabe",
+    text: {
+      en: "Want to be here",
+      ru: "Приехал бы",
+    },
+    value: 0,
+    position: 5,
+    color: "#d6beff",
+  },
+  {
+    key: "transit",
+    text: {
+      en: "Passed here",
+      ru: "Проезжал мимо",
+    },
+    value: 1,
+    position: 4,
+    color: "#88AEFF",
+  },
+  {
+    key: "stopped",
+    text: {
+      en: "Stopped here",
+      ru: "Останавливался на ночь",
+    },
+    value: 2,
+    position: 3,
+    color: "#A8FFBE",
+  },
+  {
+    key: "visited",
+    text: {
+      en: "Visited here",
+      ru: "Посещал",
+    },
+    value: 3,
+    position: 2,
+    color: "#FFE57E",
   },
   {
     key: "stayed",
     text: {
-      en: "Stayed here",
-      ru: "Останавливался тут",
+      en: "Traveled here",
+      ru: "Путешествовал тут",
     },
     value: 4,
+    position: 1,
     color: "#FFB57E",
   },
   {
@@ -24,6 +66,7 @@ const levels = [
       ru: "Жил тут",
     },
     value: 5,
+    position: 0,
     color: "#FF7E7E",
   },
 ];

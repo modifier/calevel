@@ -25,12 +25,14 @@ export class CaSelectLevel extends LitElement {
       left: `${this.position?.x || 0}px`,
       visibility: this.position ? "visible" : "hidden",
     };
+    const levelsToSort = [ ...levels ];
+    levelsToSort.sort((a, b) => a.position < b.position ? -1 : 1);
 
     return html`
       <div style=${styleMap(styles)}>
         <h2>${this.country}</h2>
         <ul>
-          ${levels.map(({ key, text, color }) => {
+          ${levelsToSort.map(({ key, text, color }) => {
             return html`<li
               @click="${this.handleClick}"
               data-key="${key}"

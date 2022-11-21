@@ -9,10 +9,13 @@ export class CaLegend extends LitElement {
   language!: Locale;
 
   render() {
+    const levelsToSort = [ ...levels ];
+    levelsToSort.sort((a, b) => a.position < b.position ? -1 : 1);
+
     return html`
       <div>
         <ul>
-          ${levels.map(({ text, value, color }) => {
+          ${levelsToSort.map(({ text, value, color }) => {
             return html`<li style="--ca-level-color: ${color}">
               <span>${text[this.language]}</span>
               <span>${value}pts</span>
@@ -27,7 +30,7 @@ export class CaLegend extends LitElement {
     div {
       position: absolute;
       top: 50vh;
-      left: 200px;
+      left: 50px;
       background: white;
       border-radius: 4px;
       border: 2px solid black;
@@ -42,8 +45,8 @@ export class CaLegend extends LitElement {
     li {
       margin: 0;
       background-color: var(--ca-level-color);
-      padding: 4px 10px;
-      cursor: pointer;
+      padding: 0 5px;
+      font-size: 0.7rem;
       display: flex;
       gap: 20px;
       justify-content: space-between;
