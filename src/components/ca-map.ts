@@ -80,13 +80,12 @@ export default class CaMap extends LitElement {
 
   private updateCountryLabels() {
     for (const [countryKey, countryName] of Object.entries(countries)) {
-      const element = this.renderRoot.querySelector(
+      const elements = this.renderRoot.querySelectorAll(
         `[data-country-name=${countryKey}]`
-      ) as SVGPathElement;
-      if (element) {
-        element.innerHTML = countryName[this.language];
-      } else {
-        console.log('Could not find label for ', countryKey)
+      ) as unknown as SVGTextElement[];
+      const label = countryName[this.language];
+      for (let i = 0; i < elements.length; i++) {
+        elements[i].innerHTML = Array.isArray(label) ? label[i] : label;
       }
     }
   }

@@ -53,8 +53,8 @@ export const sortedCountries = [
   },
   {
     key: "Oskemen",
-    en: "Oskemen",
-    ru: "Усть-Каменогорск"
+    en: ["", "Oskemen"],
+    ru: ["Усть-", "Каменогорск"]
   },
   {
     key: "Jetisu",
