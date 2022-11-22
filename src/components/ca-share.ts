@@ -5,6 +5,7 @@ import labels from "../data/labels";
 import { encodeState } from "../utils/state-encoder";
 import saveIcon from "../assets/save-icon.svg";
 import { LocaleController } from "../controllers/locale-controller";
+import "./ca-code";
 
 @customElement("ca-share")
 export default class CaShare extends LitElement {
@@ -18,7 +19,7 @@ export default class CaShare extends LitElement {
       <div class="ca-share">
         <div>
           <p>${this.locale.t(labels.shareTextBefore)}</p>
-          <code>${this.shareUrl}</code>
+          <ca-code code="${this.shareUrl}"></ca-code>
           <p>${this.locale.t(labels.shareTextAfter)}</p>
         </div>
         <div class="canvas"></div>

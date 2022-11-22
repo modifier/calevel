@@ -240,18 +240,6 @@ export class CaApp extends LitElement {
       box-shadow: 0 5px 20px rgb(0 0 0 / 10%);
     }
 
-    code {
-      background-color: #eee;
-      font-family: Consolas, monospace;
-      border-radius: 4px;
-      width: 100%;
-      box-shadow: -1px -1px 1px inset rgb(0 0 0 / 10%);
-      font-size: 0.9em;
-      padding: 4px 8px;
-      margin: 1em 0;
-      display: inline-block;
-    }
-
     p {
       margin: 0;
     }
