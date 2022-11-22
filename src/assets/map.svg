@@ -215,7 +215,7 @@
        data-country-name="Jambyl">Taraz</text>
     <text
        xml:space="preserve"
-       style="font-size:3.96875px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       style="font-size:3.70417px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
        x="92.608627"
        y="70.634193"
        id="text168"
@@ -230,8 +230,8 @@
     <text
        xml:space="preserve"
        style="font-size:3.70417px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
-       x="12.259045"
-       y="26.15831"
+       x="10.095293"
+       y="26.518934"
        id="text178"
        data-country-name="Oral">Oral</text>
     <text
@@ -322,7 +322,7 @@
        data-country-name="Aktau">Aktau</text>
     <text
        xml:space="preserve"
-       style="font-size:3.96875px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       style="font-size:3.70417px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
        x="93.858627"
        y="54.361485"
        id="text168-1"
@@ -530,15 +530,15 @@
     <text
        xml:space="preserve"
        style="font-size:1.85208px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
-       x="113.0495"
+       x="113.177"
        y="82.854141"
        id="text226"
        data-country-name="Namangan">Namangan</text>
     <text
        xml:space="preserve"
        style="font-size:1.85208px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
-       x="124.63473"
-       y="85.122574"
+       x="123.86973"
+       y="85.186325"
        id="text230"
        data-country-name="Andijon">Andijon</text>
     <text
@@ -606,7 +606,7 @@
     <text
        xml:space="preserve"
        style="font-size:3.175px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
-       x="92.002579"
+       x="92.227966"
        y="116.07154"
        id="text270"
        data-country-name="Surxondaryo">Termez</text>
@@ -657,8 +657,8 @@
     <text
        xml:space="preserve"
        style="font-size:2.64583px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
-       x="-33.967701"
-       y="141.6051"
+       x="-34.756874"
+       y="141.06697"
        id="text278"
        data-country-name="Sogd"
        transform="rotate(-60)">Khujand</text>
@@ -679,7 +679,7 @@
     <text
        xml:space="preserve"
        style="font-size:3.175px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
-       x="128.11841"
+       x="128.56918"
        y="108.21201"
        id="text290"
        data-country-name="Pamir">Khorugh</text>

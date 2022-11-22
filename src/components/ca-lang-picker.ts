@@ -78,12 +78,15 @@ export default class CaLangPicker extends LitElement {
       box-shadow: 0 0 0 2px #111;
       border: 0;
       border-radius: 3px;
-      padding: 6px 8px;
+      padding: 8px;
       cursor: pointer;
       display: flex;
       flex-direction: row;
       gap: 0.25rem;
       align-items: center;
+      font-size: 1.05rem;
+      font-weight: 500;
+      padding: 8px;
     }
     
     button img {

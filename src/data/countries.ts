@@ -3,7 +3,7 @@ import { Locale } from "./locales";
 export const sortedCountries = [
   {
     key: "Toshkent",
-    en: "Toshkent",
+    en: "Tashkent",
     ru: "Ташкент",
   },
   {
@@ -188,7 +188,7 @@ export const sortedCountries = [
   },
   {
     key: "Sirdaryo",
-    en: "Guliston",
+    en: "Gulistan",
     ru: "Гулистан",
   },
   {
@@ -239,7 +239,7 @@ export const sortedCountries = [
 ];
 
 export const countries = sortedCountries.reduce((acc, { key, ...rest }) => {
-  acc[key] = rest;
+  acc[key] = rest as Record<Locale, string>;
 
   return acc;
 }, {} as Record<string, Record<Locale, string>>);

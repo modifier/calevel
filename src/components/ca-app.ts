@@ -94,7 +94,7 @@ export class CaApp extends LitElement {
       </div>
       <nav>
         ${isDirty
-          ? html`<button class="reset" @click="${this.handleReset}">
+          ? html`<button class="large" @click="${this.handleReset}">
               ${labels.reset[this.language]}
             </button>`
           : nothing}
@@ -108,7 +108,7 @@ export class CaApp extends LitElement {
           language="${this.language}"
           @selectLang="${this.handleLanguageChange}"
         ></ca-lang-picker>
-        <button class="primary" @click="${this.handleShare}">
+        <button class="primary large" @click="${this.handleShare}">
           <img src="${shareIcon}" alt="Share icon" />
           ${labels.share[this.language]}
         </button>
@@ -205,8 +205,10 @@ export class CaApp extends LitElement {
       background-color: #ffb;
     }
 
-    button.primary.large {
+    button.large {
       font-size: 1.05rem;
+      font-weight: 500;
+      padding: 8px;
     }
 
     button img {
