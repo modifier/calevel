@@ -1,7 +1,5 @@
 import { css, html, LitElement } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
-import copyIcon from "../assets/copy-icon.svg";
-import tickIcon from "../assets/tick-icon.svg";
 
 @customElement("ca-code")
 export default class CaCode extends LitElement {
@@ -16,9 +14,7 @@ export default class CaCode extends LitElement {
       <code>
         ${this.code}
         <button @click="${this.copyCode}">
-          ${this.isCopied
-            ? html`<img src="${tickIcon}" alt="Tick icon" />`
-            : html`<img src="${copyIcon}" alt="Copy icon" />`}
+          <ca-icon name="${this.isCopied ? "tick" : "copy"}"></ca-icon>
         </button>
       </code>
     `;

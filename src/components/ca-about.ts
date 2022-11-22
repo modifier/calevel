@@ -1,8 +1,5 @@
 import { css, html, LitElement } from "lit";
 import { customElement, state } from "lit/decorators.js";
-import telegramIcon from "../assets/telegram-icon.svg";
-import githubIcon from "../assets/github-icon.svg";
-import homeIcon from "../assets/home-icon.svg";
 import labels from "../data/labels";
 import { LocaleController } from "../controllers/locale-controller";
 
@@ -22,8 +19,8 @@ export default class CaAbout extends LitElement {
             <strong>${this.locale.t(labels.author)}</strong>:
             ${this.locale.t(labels.me)}
             <a href="https://t.me/modifiertravels" target="_blank" tabindex="0"
-              ><img src="${telegramIcon}" alt="Telegram Logo"
-            /></a>
+              ><ca-icon name="telegram"></ca-icon
+            ></a>
           </p>
         </div>
 
@@ -44,14 +41,14 @@ export default class CaAbout extends LitElement {
 
         <p class="additional">
           <a tabindex="0" href="https://t.me/modifiertravels" target="_blank"
-            ><img src="${telegramIcon}" alt="Telegram Logo"
-          /></a>
+            ><ca-icon name="telegram"></ca-icon
+          ></a>
           <a tabindex="0" href="https://modya.me" target="_blank"
-            ><img src="${homeIcon}" alt="Home icon"
-          /></a>
+            ><ca-icon name="home"></ca-icon
+          ></a>
           <a tabindex="0" href="https://github.com/modifier" target="_blank"
-            ><img src="${githubIcon}" alt="Github Logo"
-          /></a>
+            ><ca-icon name="github"></ca-icon
+          ></a>
         </p>
 
         <div class="close">
@@ -118,10 +115,7 @@ export default class CaAbout extends LitElement {
       display: flex;
       gap: 0.5em;
       justify-content: center;
-    }
-
-    .additional img {
-      height: 1.5em;
+      font-size: 1.5em;
     }
 
     .close {
@@ -134,11 +128,6 @@ export default class CaAbout extends LitElement {
 
     a {
       color: rgb(142, 77, 255);
-    }
-
-    img {
-      height: 1em;
-      vertical-align: middle;
     }
   `;
 }

@@ -10,11 +10,10 @@ import "../components/ca-lang-picker";
 import "../components/ca-share";
 import "../components/ca-shared";
 import "../components/ca-about";
+import "../components/ca-icon";
 import labels from "../data/labels";
 import { getDefaultLocale } from "../utils/locale";
 import { getSavedCountries, getSharedState } from "../utils/state-encoder";
-import shareIcon from "../assets/share-icon.svg";
-import undoIcon from "../assets/undo-icon.svg";
 import { LocaleController } from "../controllers/locale-controller";
 
 @customElement("ca-app")
@@ -94,13 +93,13 @@ export class CaApp extends LitElement {
             : nothing}
           ${this.storedLevelsByCountry
             ? html`<button @click="${this.handleRestore}">
-                <img src="${undoIcon}" alt="Undo icon" />
+                <ca-icon name="undo"></ca-icon>
                 ${this.locale.t(labels.restore)}
               </button>`
             : nothing}
           <ca-lang-picker></ca-lang-picker>
           <button class="primary large" @click="${this.handleShare}">
-            <img src="${shareIcon}" alt="Share icon" />
+            <ca-icon name="share"></ca-icon>
             ${this.locale.t(labels.share)}
           </button>
         </div>
@@ -182,6 +181,7 @@ export class CaApp extends LitElement {
       width: 800px;
       height: 600px;
       min-height: initial;
+      min-width: initial;
       background-color: rgb(215, 199, 182);
     }
 
@@ -193,7 +193,7 @@ export class CaApp extends LitElement {
 
     ca-legend {
       position: absolute;
-      top: 60vh;
+      top: 60%;
       right: 1rem;
     }
 
@@ -339,8 +339,9 @@ export class CaApp extends LitElement {
 
     .canvas {
       flex: 0 1 auto;
-      max-height: 480px;
+      height: 480px;
       max-width: 100%;
+      aspect-ratio: 4/3;
     }
 
     .canvas canvas {

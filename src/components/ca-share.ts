@@ -3,7 +3,6 @@ import { customElement, property } from "lit/decorators.js";
 import html2canvas from "html2canvas";
 import labels from "../data/labels";
 import { encodeState } from "../utils/state-encoder";
-import saveIcon from "../assets/save-icon.svg";
 import { LocaleController } from "../controllers/locale-controller";
 import "./ca-code";
 
@@ -25,7 +24,7 @@ export default class CaShare extends LitElement {
         <div class="canvas"></div>
         <div class="share-buttons">
           <button class="primary large" @click="${this.handleSave}">
-            <img src="${saveIcon}" alt="Save icon" />
+            <ca-icon name="save"></ca-icon>
             ${this.locale.t(labels.savePicture)}
           </button>
           <button @click="${this.handleClose}">

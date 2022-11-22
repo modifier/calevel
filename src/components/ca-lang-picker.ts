@@ -24,17 +24,14 @@ export default class CaLangPicker extends LitElement {
                 tabindex="0"
                 @click="${this.menuSelectHandler}"
               >
-                <img
-                  src="${localeIcons[key as Locale]}"
-                  alt="Flag of ${name}"
-                />
+                <ca-icon name="${localeIcons[key as Locale]}"></ca-icon>
                 ${name}
               </li>`;
             })}
           </ul>
         </div>
         <button @click="${this.menuDropHandler}">
-          <img src="${this.locale.t(localeIcons)}" alt="Flag of ${name}" />
+          <ca-icon name="${this.locale.t(localeIcons)}"></ca-icon>
           <span>${locales[this.locale.locale]}</span>
         </button>
       </div>
@@ -69,7 +66,7 @@ export default class CaLangPicker extends LitElement {
 
     .dropdown {
       position: absolute;
-      bottom: 40px;
+      bottom: 50px;
       right: 50%;
       transform: translateX(50%);
       display: none;
