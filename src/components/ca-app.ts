@@ -78,32 +78,32 @@ export class CaApp extends LitElement {
           : ""}"
       >
         <ca-level-label level="${totalLevel}"></ca-level-label>
-        <ca-legend></ca-legend>
         <ca-map
           levelsByCountry="${JSON.stringify(this.levelsByCountry)}"
           @change="${this.handleLevelChange}"
         ></ca-map>
-      </div>
-      <div class="about">
-        <ca-about></ca-about>
+        <ca-legend></ca-legend>
       </div>
       <nav>
-        ${isDirty
-          ? html`<button class="large" @click="${this.handleReset}">
-              ${this.locale.t(labels.reset)}
-            </button>`
-          : nothing}
-        ${this.storedLevelsByCountry
-          ? html`<button @click="${this.handleRestore}">
-              <img src="${undoIcon}" alt="Undo icon" />
-              ${this.locale.t(labels.restore)}
-            </button>`
-          : nothing}
-        <ca-lang-picker></ca-lang-picker>
-        <button class="primary large" @click="${this.handleShare}">
-          <img src="${shareIcon}" alt="Share icon" />
-          ${this.locale.t(labels.share)}
-        </button>
+        <ca-about></ca-about>
+        <div class="buttons">
+          ${isDirty
+            ? html`<button class="large" @click="${this.handleReset}">
+                ${this.locale.t(labels.reset)}
+              </button>`
+            : nothing}
+          ${this.storedLevelsByCountry
+            ? html`<button @click="${this.handleRestore}">
+                <img src="${undoIcon}" alt="Undo icon" />
+                ${this.locale.t(labels.restore)}
+              </button>`
+            : nothing}
+          <ca-lang-picker></ca-lang-picker>
+          <button class="primary large" @click="${this.handleShare}">
+            <img src="${shareIcon}" alt="Share icon" />
+            ${this.locale.t(labels.share)}
+          </button>
+        </div>
       </nav>
       ${this.sharing
         ? html`<ca-share
@@ -160,12 +160,90 @@ export class CaApp extends LitElement {
       width: 100%;
       height: 100%;
       margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media (max-aspect-ratio: 1/1), (max-width: 48rem) {
+      :host {
+        width: max-content;
+      }
+    }
+
+    .ca-map-container {
+      width: 100%;
+      height: 100%;
+      min-width: 100%;
+      min-height: 100%;
+      position: relative;
     }
 
     .ca-map-container--sharing {
       width: 800px;
       height: 600px;
+      min-height: initial;
       background-color: rgb(215, 199, 182);
+    }
+
+    ca-level-label {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    ca-legend {
+      position: absolute;
+      top: 60vh;
+      right: 1rem;
+    }
+
+    ca-map {
+      padding: 2em 1em;
+      box-sizing: border-box;
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+
+    @media (min-aspect-ratio: 2/1) {
+      .ca-map-container:not(.ca-map-container--sharing) ca-legend {
+        left: 2rem;
+        right: initial;
+      }
+    }
+
+    @media (max-aspect-ratio: 1/1), (max-width: 48rem) {
+      .ca-map-container:not(.ca-map-container--sharing) ca-legend {
+        position: sticky;
+        top: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        right: initial;
+        width: fit-content;
+        display: block;
+      }
+    }
+
+    @media (max-aspect-ratio: 1/1), (max-width: 48rem) {
+      .ca-map-container:not(.ca-map-container--sharing) ca-level-label {
+        left: 0;
+        width: 100%;
+        text-align: center;
+      }
+
+      .ca-map-container:not(.ca-map-container--sharing) {
+        height: min-content;
+        min-height: auto;
+        flex: 1 0 auto;
+        width: max-content;
+      }
+
+      .ca-map-container:not(.ca-map-container--sharing) ca-map {
+        padding: 1em;
+        width: min-content;
+        height: min-content;
+        display: block;
+      }
     }
 
     button {
@@ -179,6 +257,8 @@ export class CaApp extends LitElement {
       flex-direction: row;
       gap: 0.25rem;
       align-items: center;
+      width: 100%;
+      justify-content: center;
     }
 
     button.primary {
@@ -204,13 +284,44 @@ export class CaApp extends LitElement {
     }
 
     nav {
-      position: absolute;
+      position: fixed;
       bottom: 0;
       right: 0;
-      padding: 1em;
+      padding: 1rem;
       display: flex;
       flex-direction: row;
-      gap: 16px;
+      justify-content: space-between;
+      width: 100%;
+      box-sizing: border-box;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    nav .buttons {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      align-items: stretch;
+    }
+
+    @media (max-aspect-ratio: 1/1), (max-width: 48rem) {
+      nav {
+        position: sticky;
+        bottom: auto;
+        width: max-content;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      nav,
+      nav .buttons {
+        flex-direction: column-reverse;
+      }
+    }
+
+    .share-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
     }
 
     .ca-share {

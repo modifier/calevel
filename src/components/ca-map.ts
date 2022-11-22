@@ -112,8 +112,8 @@ export default class CaMap extends LitElement {
 
   static styles = css`
     div {
-      max-width: 100vw;
-      max-height: 100vh;
+      max-width: 100%;
+      max-height: 100%;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
@@ -122,8 +122,8 @@ export default class CaMap extends LitElement {
     svg {
       height: 100%;
       width: 100%;
-      box-sizing: border-box;
-      padding: 2em;
+      min-width: 40rem;
+      min-height: 30rem;
     }
 
     path:focus {

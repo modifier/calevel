@@ -16,11 +16,14 @@ export class CaLevelLabel extends LitElement {
 
   static styles = css`
     h1 {
-      position: absolute;
-      top: 0;
-      right: 0;
-      padding: 1em;
-      margin: 0 auto;
+      padding: 1rem;
+      margin: 0;
+    }
+
+    @media (max-width: 40rem) {
+      h1 {
+        font-size: 1.5rem;
+      }
     }
   `;
 }

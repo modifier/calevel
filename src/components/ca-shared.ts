@@ -15,9 +15,14 @@ export default class CaShare extends LitElement {
           <p>${this.locale.t(labels.sharedText)}</p>
         </div>
         <div class="canvas"></div>
-        <button class="primary large" @click="${this.handleClose}">
-          ${this.locale.t(labels.drawOwn)}
-        </button>
+        <div class="share-buttons">
+          <button class="primary large" @click="${this.handleClose}">
+            ${this.locale.t(labels.drawOwn)}
+          </button>
+        </div>
+        <nav>
+          <ca-lang-picker></ca-lang-picker>
+        </nav>
       </div>
     `;
   }

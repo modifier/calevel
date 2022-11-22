@@ -23,13 +23,15 @@ export default class CaShare extends LitElement {
           <p>${this.locale.t(labels.shareTextAfter)}</p>
         </div>
         <div class="canvas"></div>
-        <button class="primary large" @click="${this.handleSave}">
-          <img src="${saveIcon}" alt="Save icon" />
-          ${this.locale.t(labels.savePicture)}
-        </button>
-        <button @click="${this.handleClose}">
-          ${this.locale.t(labels.close)}
-        </button>
+        <div class="share-buttons">
+          <button class="primary large" @click="${this.handleSave}">
+            <img src="${saveIcon}" alt="Save icon" />
+            ${this.locale.t(labels.savePicture)}
+          </button>
+          <button @click="${this.handleClose}">
+            ${this.locale.t(labels.close)}
+          </button>
+        </div>
       </div>
     `;
   }

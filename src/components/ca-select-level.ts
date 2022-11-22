@@ -21,8 +21,8 @@ export class CaSelectLevel extends LitElement {
 
   render() {
     const styles = {
-      top: `${this.position?.y || 0}px`,
-      left: `${this.position?.x || 0}px`,
+      "--top": `${this.position?.y || 0}px`,
+      "--left": `${this.position?.x || 0}px`,
       visibility: this.position ? "visible" : "hidden",
     };
     const levelsToSort = [...levels];
@@ -73,6 +73,19 @@ export class CaSelectLevel extends LitElement {
       text-align: center;
       box-shadow: 3px 6px 0 rgb(0 0 0 / 10%);
       transform: translate(-50%, -50%);
+      top: var(--top);
+      left: var(--left);
+    }
+
+    @media screen and (max-width: 48rem) {
+      div {
+        position: fixed;
+        top: 1rem;
+        left: 0;
+        right: 0;
+        transform: translateX(50%);
+        width: max-content;
+      }
     }
 
     h2 {
