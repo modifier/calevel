@@ -38,6 +38,11 @@ export const sortedCountries = [
   },
   {
     key: "Turkistan",
+    en: "Turkistan",
+    ru: "Туркестан",
+  },
+  {
+    key: "Shymkent",
     en: "Shymkent",
     ru: "Шымкент",
   },

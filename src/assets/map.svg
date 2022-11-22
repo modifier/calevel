@@ -40,13 +40,14 @@
      inkscape:window-height="1001"
      id="namedview108"
      showgrid="false"
-     inkscape:zoom="1.4673589"
-     inkscape:cx="317.73001"
-     inkscape:cy="261.22775"
+     inkscape:zoom="4.1503177"
+     inkscape:cx="385.5484"
+     inkscape:cy="262.12131"
      inkscape:window-x="-9"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer4" />
+     inkscape:current-layer="layer8"
+     inkscape:document-rotation="0" />
   <style
      id="style2">
     .country {
@@ -116,10 +117,15 @@
        data-country="Qyzylorda" />
     <path
        class="state"
-       d="M 91.425208,76.861449 V 41.67187 h 22.455312 v 29.633329 l -16.039508,9.260416 z"
+       d="M 91.425208,66.78535 V 41.67187 h 22.455312 l 0,25.125514 z"
        id="path949"
-       sodipodi:nodetypes="cccccc"
+       sodipodi:nodetypes="ccccc"
        data-country="Turkistan" />
+    <path
+       class="state"
+       d="m 91.425207,66.785349 22.455313,0.01204 v 4.507814 L 97.841014,80.56562 91.425207,76.861454 Z"
+       id="path110"
+       data-country="Shymkent" />
     <path
        class="state"
        d="M 113.88052,71.305199 V 41.67187 h 16.03951 v 20.372914 z"
@@ -210,10 +216,10 @@
     <text
        xml:space="preserve"
        style="font-size:3.96875px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
-       x="92.672379"
-       y="54.824162"
+       x="92.608627"
+       y="70.634193"
        id="text168"
-       data-country-name="Turkistan">Shymkent</text>
+       data-country-name="Shymkent">Shymkent</text>
     <text
        xml:space="preserve"
        style="font-size:3.70417px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
@@ -285,13 +291,13 @@
        id="text210"
        data-country-name="Abai">Semey</text>
     <text
-      xml:space="preserve"
-      style="font-size:3.175px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
-      x="59.659893"
-      y="181.06601"
-      id="text214-7"
-      transform="rotate(-60)"
-      data-country-name="Oskemen" />
+       xml:space="preserve"
+       style="font-size:3.175px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="59.659893"
+       y="181.06601"
+       id="text214-7"
+       transform="rotate(-60)"
+       data-country-name="Oskemen" />
     <text
        xml:space="preserve"
        style="font-size:3.175px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
@@ -314,6 +320,13 @@
        y="65.030701"
        id="text222"
        data-country-name="Aktau">Aktau</text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.96875px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="93.858627"
+       y="54.361485"
+       id="text168-1"
+       data-country-name="Turkistan">Turkistan</text>
   </g>
   <g
      inkscape:groupmode="layer"
