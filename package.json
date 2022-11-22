@@ -10,7 +10,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "prettier": "npx prettier --write ."
+    "prettier": "npx prettier --write .",
+    "preview": "vite preview"
   },
   "dependencies": {
     "flag-icons": "^6.6.6",
