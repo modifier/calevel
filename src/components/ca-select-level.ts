@@ -32,12 +32,16 @@ export class CaSelectLevel extends LitElement {
         <h2>${this.country}</h2>
         <ul>
           ${levelsToSort.map(({ key, text, color }) => {
+            let label = this.locale.t(text);
             return html`<li
               @click="${this.handleClick}"
               data-key="${key}"
               style="--ca-level-color: ${color}"
+              role="button"
+              tabindex="0"
+              aria-label="${label}"
             >
-              ${this.locale.t(text)}
+              ${label}
             </li>`;
           })}
         </ul>

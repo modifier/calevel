@@ -21,7 +21,7 @@ export default class CaAbout extends LitElement {
           <p>
             <strong>${this.locale.t(labels.author)}</strong>:
             ${this.locale.t(labels.me)}
-            <a href="https://t.me/modifiertravels" target="_blank"
+            <a href="https://t.me/modifiertravels" target="_blank" tabindex="0"
               ><img src="${telegramIcon}" alt="Telegram Logo"
             /></a>
           </p>
@@ -31,6 +31,7 @@ export default class CaAbout extends LitElement {
           <p>
             ${this.locale.t(labels.inspiredBy)}
             <a
+              tabindex="0"
               href="https://tenpages.github.io/us-level/eu.html"
               target="_blank"
               >Europe Level</a
@@ -42,13 +43,13 @@ export default class CaAbout extends LitElement {
         </div>
 
         <p class="additional">
-          <a href="https://t.me/modifiertravels" target="_blank"
+          <a tabindex="0" href="https://t.me/modifiertravels" target="_blank"
             ><img src="${telegramIcon}" alt="Telegram Logo"
           /></a>
-          <a href="https://modya.me" target="_blank"
+          <a tabindex="0" href="https://modya.me" target="_blank"
             ><img src="${homeIcon}" alt="Home icon"
           /></a>
-          <a href="https://github.com/modifier" target="_blank"
+          <a tabindex="0" href="https://github.com/modifier" target="_blank"
             ><img src="${githubIcon}" alt="Github Logo"
           /></a>
         </p>

@@ -87,28 +87,76 @@
        transform="translate(-6.4161081,-23.14381)" />
     <path
        class="state"
-       d="M 30.475069,62.044784 62.55409,43.523953 V 21.298956 H 30.475069 Z"
-       id="path939"
-       sodipodi:nodetypes="ccccc"
-       data-country="Aktobe" />
-    <path
-       class="state"
        d="M 30.475069,21.298956 16.03951,12.964582 0,22.224997 v 11.112499 l 30.475069,-1e-6 z"
        id="path941"
        sodipodi:nodetypes="cccccc"
        data-country="Oral" />
     <path
-       class="state"
-       d="m 0,33.337496 24.059265,13.890623 h 6.415804 V 33.337495 Z"
-       id="path943"
-       sodipodi:nodetypes="ccccc"
-       data-country="Atyrau" />
+            class="state"
+            d="m 0,33.337496 24.059265,13.890623 h 6.415804 V 33.337495 Z"
+            id="path943"
+            sodipodi:nodetypes="ccccc"
+            data-country="Atyrau" />
     <path
-       class="state"
-       d="M 24.059265,47.228119 10.84795,54.855675 v 25.490716 l 19.627119,0.219224 V 47.228119 Z"
-       id="path945"
-       sodipodi:nodetypes="cccccc"
-       data-country="Aktau" />
+            class="state"
+            d="M 24.059265,47.228119 10.84795,54.855675 v 25.490716 l 19.627119,0.219224 V 47.228119 Z"
+            id="path945"
+            sodipodi:nodetypes="cccccc"
+            data-country="Aktau" />
+    <path
+            class="state"
+            d="M 30.475069,62.044784 62.55409,43.523953 V 21.298956 H 30.475069 Z"
+            id="path939"
+            sodipodi:nodetypes="ccccc"
+            data-country="Aktobe" />
+    <path
+        class="state"
+        d="M 62.55409,43.523953 V 21.298956 L 91.425208,4.6302078 V 26.855205 Z"
+        id="path967"
+        sodipodi:nodetypes="ccccc"
+        data-country="Qostanai" />
+    <path
+            class="state"
+            d="M 91.425208,4.6302077 H 107.46472 L 120.06511,12.263529 91.425208,12.03854 Z"
+            id="path971"
+            sodipodi:nodetypes="ccccc"
+            data-country="Petropavl" />
+    <path
+            class="state"
+            d="M 91.425208,12.03854 V 26.855205 H 120.29633 L 120.06511,12.263529 Z"
+            id="path973"
+            sodipodi:nodetypes="ccccc"
+            data-country="Astana" />
+    <path
+            class="state"
+            d="M 65.761992,41.67187 91.425208,26.855205 H 120.29633 V 41.67187 Z"
+            id="path963"
+            sodipodi:nodetypes="ccccc"
+            data-country="Ulytau" />
+    <path
+            class="state"
+            d="m 120.06511,12.263529 0.23122,7.183344 h 44.91062 L 136.33584,2.7781246 Z"
+            id="path979"
+            sodipodi:nodetypes="ccccc"
+            data-country="Pavlodar" />
+    <path
+            class="state"
+            d="m 120.29633,19.446873 h 35.28692 V 41.67187 h -35.28692 z"
+            id="path975"
+            sodipodi:nodetypes="ccccc"
+            data-country="Karaganda" />
+    <path
+            class="state"
+            d="M 181.24646,19.446873 V 41.67187 H 155.58325 V 19.446873 Z"
+            id="path961"
+            sodipodi:nodetypes="ccccc"
+            data-country="Abai" />
+    <path
+            class="state"
+            d="M 181.24646,41.67187 V 19.446873 h 22.45532 L 190.87017,41.67187 Z"
+            id="path955"
+            sodipodi:nodetypes="ccccc"
+            data-country="Oskemen" />
     <path
        class="state"
        d="M 48.11853,51.858327 65.761992,41.67187 h 25.663216 v 35.189579 z"
@@ -140,58 +188,10 @@
        data-country="Almaty" />
     <path
        class="state"
-       d="M 181.24646,41.67187 V 19.446873 h 22.45532 L 190.87017,41.67187 Z"
-       id="path955"
-       sodipodi:nodetypes="ccccc"
-       data-country="Oskemen" />
-    <path
-       class="state"
        d="m 139.54255,41.671515 41.70391,3.55e-4 -0.002,12.964116 h -41.70237 z"
-       id="path957"
+       id="path957"1
        sodipodi:nodetypes="ccccc"
        data-country="Jetisu" />
-    <path
-       class="state"
-       d="M 181.24646,19.446873 V 41.67187 H 155.58325 V 19.446873 Z"
-       id="path961"
-       sodipodi:nodetypes="ccccc"
-       data-country="Abai" />
-    <path
-       class="state"
-       d="M 65.761992,41.67187 91.425208,26.855205 H 120.29633 V 41.67187 Z"
-       id="path963"
-       sodipodi:nodetypes="ccccc"
-       data-country="Ulytau" />
-    <path
-       class="state"
-       d="M 62.55409,43.523953 V 21.298956 L 91.425208,4.6302078 V 26.855205 Z"
-       id="path967"
-       sodipodi:nodetypes="ccccc"
-       data-country="Qostanai" />
-    <path
-       class="state"
-       d="M 91.425208,4.6302077 H 107.46472 L 120.06511,12.263529 91.425208,12.03854 Z"
-       id="path971"
-       sodipodi:nodetypes="ccccc"
-       data-country="Petropavl" />
-    <path
-       class="state"
-       d="M 91.425208,12.03854 V 26.855205 H 120.29633 L 120.06511,12.263529 Z"
-       id="path973"
-       sodipodi:nodetypes="ccccc"
-       data-country="Astana" />
-    <path
-       class="state"
-       d="m 120.29633,19.446873 h 35.28692 V 41.67187 h -35.28692 z"
-       id="path975"
-       sodipodi:nodetypes="ccccc"
-       data-country="Karaganda" />
-    <path
-       class="state"
-       d="m 120.06511,12.263529 0.23122,7.183344 h 44.91062 L 136.33584,2.7781246 Z"
-       id="path979"
-       sodipodi:nodetypes="ccccc"
-       data-country="Pavlodar" />
     <text
        xml:space="preserve"
        style="font-size:4.7625px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
@@ -329,6 +329,193 @@
        data-country-name="Turkistan">Turkistan</text>
   </g>
   <g
+          inkscape:groupmode="layer"
+          id="layer7"
+          inkscape:label="uz"
+          transform="translate(3.2079022,0.10583332)">
+    <path
+            class="country"
+            d="m 97.841316,140.75109 v -14.81667 l -28.871118,-16.66875 -9.623706,1.85209 -1.603951,-8.33438 -6.415804,-3.704163 -8.019756,4.630203 H 36.891177 V 85.188594 l 17.643462,-10.186457 49.722481,28.707283 22.45531,-12.964577 -6.4158,11.112497 h 9.62371 l 11.22765,6.48229 -9.6237,5.55625 h -12.83161 v -9.26041 l -14.43556,25.00312 6.4158,3.70416 v 7.40834 z"
+            id="path54"
+            sodipodi:nodetypes="cccccccccccccccccccccc"
+            transform="translate(-6.4161081,-23.14381)" />
+    <path
+            class="state"
+            d="M 30.475069,80.565615 V 62.044784 L 48.11853,51.858327 64.158041,61.118742 52.930383,80.565615 44.910628,75.935407 36.890873,80.565615 Z"
+            id="path92"
+            sodipodi:nodetypes="cccccccc"
+            data-country="Karakalpakstan" />
+    <path
+            class="state"
+            d="M 64.158041,61.118742 91.425208,76.861449 85.009404,87.973947 57.742237,72.231241 Z"
+            id="path106"
+            sodipodi:nodetypes="ccccc"
+            data-country="Navoiy" />
+    <path
+            class="state"
+            d="M 85.009404,87.973947 57.742237,72.231241 52.930383,80.565615 80.197551,96.308321 Z"
+            id="path108"
+            sodipodi:nodetypes="ccccc"
+            data-country="Buxoro" />
+    <path
+            class="state"
+            d="m 51.326432,79.639573 11.227659,6.482292 -9.623708,1.852082 z"
+            id="path1000"
+            sodipodi:nodetypes="cccc"
+            data-country="Xorazm" />
+    <path
+            class="state"
+            d="M 91.425208,76.861449 109.06867,87.047906 104.25682,95.38228 86.613355,85.195823 Z"
+            id="path104"
+            sodipodi:nodetypes="ccccc"
+            data-country="Jizzax" />
+    <path
+            class="state"
+            d="m 86.613355,85.195823 -3.207902,5.556249 17.643457,10.186458 3.20791,-5.55625 z"
+            id="path112"
+            sodipodi:nodetypes="ccccc"
+            data-country="Samarqand" />
+    <path
+            class="state"
+            d="m 80.197551,96.308322 3.207903,-5.556249 17.643456,10.186457 -3.207896,5.55625 z"
+            id="path988"
+            data-country="Qashqadaryo" />
+    <path
+            class="state"
+            d="m 104.25682,110.19894 v 7.40834 H 91.425208 v -14.81667 z"
+            id="path94"
+            sodipodi:nodetypes="ccccc"
+            data-country="Surxondaryo" />
+    <path
+            class="state"
+            d="m 104.25682,76.861449 8.01975,4.630208 -3.2079,5.556249 -11.227656,-6.482291 z"
+            id="path4538"
+            data-country="Sirdaryo" />
+    <path
+            class="state"
+            d="m 120.29633,67.601033 -8.01976,13.890623 -8.01975,-4.630207 z"
+            id="path102"
+            sodipodi:nodetypes="cccc"
+            data-country="Toshkent" />
+    <path
+            class="state"
+            d="m 123.50423,86.121863 h -11.22766 v -4.630207 l 1.60395,-2.778124 h 9.62371 z"
+            id="path100"
+            sodipodi:nodetypes="cccccc"
+            data-country="Namangan" />
+    <path
+            class="state"
+            d="m 112.27657,86.121863 20.85136,10e-7 -8.01975,4.630208 h -12.83161 z"
+            id="path96"
+            sodipodi:nodetypes="ccccc"
+            data-country="Fergana" />
+    <path
+            class="state"
+            d="m 133.12793,86.121864 1.60396,-0.926041 -11.22766,-6.482291 v 7.408332 z"
+            id="path98"
+            sodipodi:nodetypes="ccccc"
+            data-country="Andijon" />
+    <text
+            xml:space="preserve"
+            style="font-size:2.38125px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+            x="54.192794"
+            y="121.48009"
+            id="text152"
+            transform="rotate(-30)"
+            data-country-name="Toshkent">Toshkent</text>
+    <text
+            xml:space="preserve"
+            style="font-size:1.85208px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+            x="113.177"
+            y="82.854141"
+            id="text226"
+            data-country-name="Namangan">Namangan</text>
+    <text
+            xml:space="preserve"
+            style="font-size:1.85208px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+            x="123.86973"
+            y="85.186325"
+            id="text230"
+            data-country-name="Andijon">Andijon</text>
+    <text
+            xml:space="preserve"
+            style="font-size:2.64583px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+            x="113.5356"
+            y="89.173347"
+            id="text234"
+            data-country-name="Fergana">Fergana</text>
+    <text
+            xml:space="preserve"
+            style="font-size:3.70417px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+            x="39.730389"
+            y="68.271332"
+            id="text238"
+            data-country-name="Karakalpakstan">Nukus</text>
+    <text
+            xml:space="preserve"
+            style="font-size:3.70417px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+            x="95.656387"
+            y="28.545115"
+            id="text242"
+            transform="rotate(30)"
+            data-country-name="Navoiy">Navoiy</text>
+    <text
+            xml:space="preserve"
+            style="font-size:3.70417px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+            x="94.700104"
+            y="39.939785"
+            id="text246"
+            data-country-name="Buxoro"
+            transform="rotate(30)">Buxoro</text>
+    <text
+            xml:space="preserve"
+            style="font-size:3.70417px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+            x="121.75923"
+            y="41.388779"
+            id="text250"
+            data-country-name="Qashqadaryo"
+            transform="rotate(30)">Karshi</text>
+    <text
+            xml:space="preserve"
+            style="font-size:3.175px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+            x="118.65369"
+            y="34.907219"
+            id="text254"
+            data-country-name="Samarqand"
+            transform="rotate(30)">Samarqand</text>
+    <text
+            xml:space="preserve"
+            style="font-size:2.64583px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+            x="34.861767"
+            y="96.027275"
+            id="text258"
+            data-country-name="Xorazm"
+            transform="rotate(-11.351367)">Khiva</text>
+    <text
+            xml:space="preserve"
+            style="font-size:3.70417px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+            x="122.07775"
+            y="27.076933"
+            id="text266"
+            data-country-name="Jizzax"
+            transform="rotate(30)">Jizzax</text>
+    <text
+            xml:space="preserve"
+            style="font-size:3.175px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+            x="92.227966"
+            y="116.07154"
+            id="text270"
+            data-country-name="Surxondaryo">Termez</text>
+    <text
+            xml:space="preserve"
+            style="font-size:2.64583px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+            x="126.66973"
+            y="20.061163"
+            id="text274"
+            data-country-name="Sirdaryo"
+            transform="rotate(30)">Gulistan</text>
+  </g>
+  <g
      inkscape:groupmode="layer"
      id="layer6"
      inkscape:label="kg"
@@ -364,6 +551,12 @@
        sodipodi:nodetypes="cccccc"
        data-country="Jalal-Abad" />
     <path
+            class="state"
+            d="m 150.7714,68.527075 -8.01976,4.630207 -8.01975,12.038541 22.45531,-12.964582 z"
+            id="path88"
+            sodipodi:nodetypes="ccccc"
+            data-country="Naryn" />
+    <path
        class="state"
        d="m 112.27657,98.160404 v -7.408332 h 12.83161 v 7.408332 z"
        id="path84"
@@ -375,12 +568,6 @@
        id="path86"
        sodipodi:nodetypes="ccccc"
        data-country="Osh" />
-    <path
-       class="state"
-       d="m 150.7714,68.527075 -8.01976,4.630207 -8.01975,12.038541 22.45531,-12.964582 z"
-       id="path88"
-       sodipodi:nodetypes="ccccc"
-       data-country="Naryn" />
     <text
        xml:space="preserve"
        style="font-size:3.70417px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
@@ -434,193 +621,6 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     id="layer7"
-     inkscape:label="uz"
-     transform="translate(3.2079022,0.10583332)">
-    <path
-       class="country"
-       d="m 97.841316,140.75109 v -14.81667 l -28.871118,-16.66875 -9.623706,1.85209 -1.603951,-8.33438 -6.415804,-3.704163 -8.019756,4.630203 H 36.891177 V 85.188594 l 17.643462,-10.186457 49.722481,28.707283 22.45531,-12.964577 -6.4158,11.112497 h 9.62371 l 11.22765,6.48229 -9.6237,5.55625 h -12.83161 v -9.26041 l -14.43556,25.00312 6.4158,3.70416 v 7.40834 z"
-       id="path54"
-       sodipodi:nodetypes="cccccccccccccccccccccc"
-       transform="translate(-6.4161081,-23.14381)" />
-    <path
-       class="state"
-       d="M 30.475069,80.565615 V 62.044784 L 48.11853,51.858327 64.158041,61.118742 52.930383,80.565615 44.910628,75.935407 36.890873,80.565615 Z"
-       id="path92"
-       sodipodi:nodetypes="cccccccc"
-       data-country="Karakalpakstan" />
-    <path
-       class="state"
-       d="m 104.25682,110.19894 v 7.40834 H 91.425208 v -14.81667 z"
-       id="path94"
-       sodipodi:nodetypes="ccccc"
-       data-country="Surxondaryo" />
-    <path
-       class="state"
-       d="m 112.27657,86.121863 20.85136,10e-7 -8.01975,4.630208 h -12.83161 z"
-       id="path96"
-       sodipodi:nodetypes="ccccc"
-       data-country="Fergana" />
-    <path
-       class="state"
-       d="m 133.12793,86.121864 1.60396,-0.926041 -11.22766,-6.482291 v 7.408332 z"
-       id="path98"
-       sodipodi:nodetypes="ccccc"
-       data-country="Andijon" />
-    <path
-       class="state"
-       d="m 123.50423,86.121863 h -11.22766 v -4.630207 l 1.60395,-2.778124 h 9.62371 z"
-       id="path100"
-       sodipodi:nodetypes="cccccc"
-       data-country="Namangan" />
-    <path
-       class="state"
-       d="m 120.29633,67.601033 -8.01976,13.890623 -8.01975,-4.630207 z"
-       id="path102"
-       sodipodi:nodetypes="cccc"
-       data-country="Toshkent" />
-    <path
-       class="state"
-       d="M 91.425208,76.861449 109.06867,87.047906 104.25682,95.38228 86.613355,85.195823 Z"
-       id="path104"
-       sodipodi:nodetypes="ccccc"
-       data-country="Jizzax" />
-    <path
-       class="state"
-       d="M 64.158041,61.118742 91.425208,76.861449 85.009404,87.973947 57.742237,72.231241 Z"
-       id="path106"
-       sodipodi:nodetypes="ccccc"
-       data-country="Navoiy" />
-    <path
-       class="state"
-       d="M 85.009404,87.973947 57.742237,72.231241 52.930383,80.565615 80.197551,96.308321 Z"
-       id="path108"
-       sodipodi:nodetypes="ccccc"
-       data-country="Buxoro" />
-    <path
-       class="state"
-       d="m 86.613355,85.195823 -3.207902,5.556249 17.643457,10.186458 3.20791,-5.55625 z"
-       id="path112"
-       sodipodi:nodetypes="ccccc"
-       data-country="Samarqand" />
-    <path
-       class="state"
-       d="m 80.197551,96.308322 3.207903,-5.556249 17.643456,10.186457 -3.207896,5.55625 z"
-       id="path988"
-       data-country="Qashqadaryo" />
-    <path
-       class="state"
-       d="m 51.326432,79.639573 11.227659,6.482292 -9.623708,1.852082 z"
-       id="path1000"
-       sodipodi:nodetypes="cccc"
-       data-country="Xorazm" />
-    <path
-       class="state"
-       d="m 104.25682,76.861449 8.01975,4.630208 -3.2079,5.556249 -11.227656,-6.482291 z"
-       id="path4538"
-       data-country="Sirdaryo" />
-    <text
-       xml:space="preserve"
-       style="font-size:2.38125px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
-       x="54.192794"
-       y="121.48009"
-       id="text152"
-       transform="rotate(-30)"
-       data-country-name="Toshkent">Toshkent</text>
-    <text
-       xml:space="preserve"
-       style="font-size:1.85208px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
-       x="113.177"
-       y="82.854141"
-       id="text226"
-       data-country-name="Namangan">Namangan</text>
-    <text
-       xml:space="preserve"
-       style="font-size:1.85208px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
-       x="123.86973"
-       y="85.186325"
-       id="text230"
-       data-country-name="Andijon">Andijon</text>
-    <text
-       xml:space="preserve"
-       style="font-size:2.64583px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
-       x="113.5356"
-       y="89.173347"
-       id="text234"
-       data-country-name="Fergana">Fergana</text>
-    <text
-       xml:space="preserve"
-       style="font-size:3.70417px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
-       x="39.730389"
-       y="68.271332"
-       id="text238"
-       data-country-name="Karakalpakstan">Nukus</text>
-    <text
-       xml:space="preserve"
-       style="font-size:3.70417px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
-       x="95.656387"
-       y="28.545115"
-       id="text242"
-       transform="rotate(30)"
-       data-country-name="Navoiy">Navoiy</text>
-    <text
-       xml:space="preserve"
-       style="font-size:3.70417px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
-       x="94.700104"
-       y="39.939785"
-       id="text246"
-       data-country-name="Buxoro"
-       transform="rotate(30)">Buxoro</text>
-    <text
-       xml:space="preserve"
-       style="font-size:3.70417px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
-       x="121.75923"
-       y="41.388779"
-       id="text250"
-       data-country-name="Qashqadaryo"
-       transform="rotate(30)">Karshi</text>
-    <text
-       xml:space="preserve"
-       style="font-size:3.175px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
-       x="118.65369"
-       y="34.907219"
-       id="text254"
-       data-country-name="Samarqand"
-       transform="rotate(30)">Samarqand</text>
-    <text
-       xml:space="preserve"
-       style="font-size:2.64583px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
-       x="34.861767"
-       y="96.027275"
-       id="text258"
-       data-country-name="Xorazm"
-       transform="rotate(-11.351367)">Khiva</text>
-    <text
-       xml:space="preserve"
-       style="font-size:3.70417px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
-       x="122.07775"
-       y="27.076933"
-       id="text266"
-       data-country-name="Jizzax"
-       transform="rotate(30)">Jizzax</text>
-    <text
-       xml:space="preserve"
-       style="font-size:3.175px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
-       x="92.227966"
-       y="116.07154"
-       id="text270"
-       data-country-name="Surxondaryo">Termez</text>
-    <text
-       xml:space="preserve"
-       style="font-size:2.64583px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
-       x="126.66973"
-       y="20.061163"
-       id="text274"
-       data-country-name="Sirdaryo"
-       transform="rotate(30)">Gulistan</text>
-  </g>
-  <g
-     inkscape:groupmode="layer"
      id="layer5"
      inkscape:label="tj"
      transform="translate(3.2079022,0.10583332)">
@@ -637,6 +637,12 @@
        sodipodi:nodetypes="cccc"
        data-country="Sogd" />
     <path
+            class="state"
+            d="m 97.841012,106.49478 6.415808,3.70416 h 19.24741 l 8.01975,-12.038536 h -19.24741 z"
+            id="path71"
+            data-country="Dushanbe"
+            sodipodi:nodetypes="cccccc" />
+    <path
        class="state"
        d="m 123.50423,110.19894 12.83161,7.40834 9.6237,-12.96458 -11.22765,-6.482296 h -3.20791 z"
        id="path60"
@@ -648,12 +654,6 @@
        id="path64"
        sodipodi:nodetypes="ccccc"
        data-country="Bokhtar" />
-    <path
-       class="state"
-       d="m 97.841012,106.49478 6.415808,3.70416 h 19.24741 l 8.01975,-12.038536 h -19.24741 z"
-       id="path71"
-       data-country="Dushanbe"
-       sodipodi:nodetypes="cccccc" />
     <text
        xml:space="preserve"
        style="font-size:2.64583px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
@@ -702,6 +702,18 @@
        sodipodi:nodetypes="ccccc"
        data-country="Balkanabat" />
     <path
+            class="state"
+            d="m 54.534334,100.01249 8.019754,-13.890627 -9.623705,1.852084 -1.603951,-8.334374 -6.415804,-3.704166 -8.019755,4.630208 h -9.623706 v 3.704166 z"
+            id="path52"
+            sodipodi:nodetypes="ccccccccc"
+            data-country="Dashoguz" />
+    <path
+            class="state"
+            d="M 54.534334,100.01249 48.11853,111.12499 27.267167,99.086446 V 84.269781 Z"
+            id="path50"
+            sodipodi:nodetypes="ccccc"
+            data-country="Ashgabat" />
+    <path
        class="state"
        d="m 85.009404,117.60728 -30.47507,-17.59479 8.019754,-13.890627 28.87112,16.668747 v 14.81667 z"
        id="path126"
@@ -713,18 +725,6 @@
        id="path128"
        sodipodi:nodetypes="ccccc"
        data-country="Mary" />
-    <path
-       class="state"
-       d="M 54.534334,100.01249 48.11853,111.12499 27.267167,99.086446 V 84.269781 Z"
-       id="path50"
-       sodipodi:nodetypes="ccccc"
-       data-country="Ashgabat" />
-    <path
-       class="state"
-       d="m 54.534334,100.01249 8.019754,-13.890627 -9.623705,1.852084 -1.603951,-8.334374 -6.415804,-3.704166 -8.019755,4.630208 h -9.623706 v 3.704166 z"
-       id="path52"
-       sodipodi:nodetypes="ccccccccc"
-       data-country="Dashoguz" />
     <text
        xml:space="preserve"
        style="font-size:3.70417px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"

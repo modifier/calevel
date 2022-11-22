@@ -19,6 +19,9 @@ export default class CaLangPicker extends LitElement {
               return html`<li
                 data-lang="${key}"
                 class="${this.locale.locale === key ? "selected-lang" : ""}"
+                role="button"
+                aria-label="${name}"
+                tabindex="0"
                 @click="${this.menuSelectHandler}"
               >
                 <img

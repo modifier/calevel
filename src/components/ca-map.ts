@@ -36,6 +36,7 @@ export default class CaMap extends LitElement {
     });
 
     for (const country of Object.keys(countries)) {
+      // There may be enclaves so it's an array
       let elements = Array.from(
         this.renderRoot.querySelectorAll(`[data-country=${country}]`)
       ) as SVGPathElement[];
@@ -44,6 +45,9 @@ export default class CaMap extends LitElement {
       }
 
       for (const element of elements) {
+        // @ts-ignore
+        element.role = "button";
+        element.tabIndex = 0;
         element.addEventListener("click", (e: Event) =>
           this.countryClickHandler(e, country)
         );
@@ -73,12 +77,20 @@ export default class CaMap extends LitElement {
 
   private updateCountryLabels() {
     for (const [countryKey, countryName] of Object.entries(countries)) {
-      const elements = this.renderRoot.querySelectorAll(
+      const label = this.locale.t(countryName);
+
+      const countryLabels = this.renderRoot.querySelectorAll(
         `[data-country-name=${countryKey}]`
       ) as unknown as SVGTextElement[];
-      const label = this.locale.t(countryName);
-      for (let i = 0; i < elements.length; i++) {
-        elements[i].innerHTML = Array.isArray(label) ? label[i] : label;
+      for (let i = 0; i < countryLabels.length; i++) {
+        countryLabels[i].innerHTML = Array.isArray(label) ? label[i] : label;
+      }
+
+      let countries = Array.from(
+        this.renderRoot.querySelectorAll(`[data-country=${countryKey}]`)
+      ) as SVGPathElement[];
+      for (const element of countries) {
+        element.ariaLabel = label;
       }
     }
   }
@@ -112,6 +124,14 @@ export default class CaMap extends LitElement {
       width: 100%;
       box-sizing: border-box;
       padding: 2em;
+    }
+
+    path:focus {
+      stroke: #5e9ed6;
+      stroke-width: 1px;
+      outline: none;
+      position: relative;
+      z-index: 10;
     }
   `;
 }
