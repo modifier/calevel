@@ -1,8 +1,9 @@
-import { LitElement, css, html } from "lit";
+import { LitElement, css, html, nothing } from "lit";
 import { styleMap } from "lit-html/directives/style-map.js";
 import { customElement, property } from "lit/decorators.js";
 import levels from "../data/levels";
 import { LocaleController } from "../controllers/locale-controller";
+import {countries} from "../data/countries";
 
 type CaSelectDetail = { country: string; levelKey: string };
 
@@ -29,7 +30,7 @@ export class CaSelectLevel extends LitElement {
 
     return html`
       <div style=${styleMap(styles)}>
-        <h2>${this.country}</h2>
+        <h2>${this.country ? this.locale.t(countries[this.country]) : nothing}</h2>
         <ul>
           ${levelsToSort.map(({ key, text, color }) => {
             let label = this.locale.t(text);
