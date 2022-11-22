@@ -9,10 +9,13 @@ import "../components/ca-map";
 import "../components/ca-lang-picker";
 import "../components/ca-share";
 import "../components/ca-shared";
+import "../components/ca-about";
 import { Locale } from "../data/locales";
 import labels from "../data/labels";
 import { getDefaultLocale } from "../utils/locale";
 import { getSavedCountries, getSharedState } from "../utils/state-encoder";
+import shareIcon from "../assets/share-icon.svg";
+import undoIcon from "../assets/undo-icon.svg";
 
 @customElement("ca-app")
 export class CaApp extends LitElement {
@@ -86,6 +89,9 @@ export class CaApp extends LitElement {
           @change="${this.handleLevelChange}"
         ></ca-map>
       </div>
+      <div class="about">
+        <ca-about language="${this.language}"></ca-about>
+      </div>
       <nav>
         ${isDirty
           ? html`<button class="reset" @click="${this.handleReset}">
@@ -94,6 +100,7 @@ export class CaApp extends LitElement {
           : nothing}
         ${this.storedLevelsByCountry
           ? html`<button @click="${this.handleRestore}">
+              <img src="${undoIcon}" alt="Undo icon" />
               ${labels.restore[this.language]}
             </button>`
           : nothing}
@@ -102,6 +109,7 @@ export class CaApp extends LitElement {
           @selectLang="${this.handleLanguageChange}"
         ></ca-lang-picker>
         <button class="primary" @click="${this.handleShare}">
+          <img src="${shareIcon}" alt="Share icon" />
           ${labels.share[this.language]}
         </button>
       </nav>
@@ -185,11 +193,27 @@ export class CaApp extends LitElement {
       border: 0;
       border-radius: 3px;
       padding: 6px 8px;
+      cursor: pointer;
     }
 
     button.primary {
       padding-inline: 16px;
       background-color: #ffb;
+    }
+
+    button.primary.large {
+      font-size: 1.05rem;
+    }
+
+    button img {
+      height: 1em;
+      vertical-align: middle;
+    }
+
+    .about {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
     }
 
     nav {

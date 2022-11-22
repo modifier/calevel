@@ -14,223 +14,223 @@ export const sortedCountries = [
   {
     key: "Aktobe",
     en: "Aktobe",
-    ru: "Актобе"
+    ru: "Актобе",
   },
   {
     key: "Oral",
     en: "Oral",
-    ru: "Уральск"
+    ru: "Уральск",
   },
   {
     key: "Atyrau",
     en: "Atyrau",
-    ru: "Атырау"
+    ru: "Атырау",
   },
   {
     key: "Aktau",
     en: "Aktau",
-    ru: "Актау"
+    ru: "Актау",
   },
   {
     key: "Qyzylorda",
     en: "Kyzylorda",
-    ru: "Кызылорда"
+    ru: "Кызылорда",
   },
   {
     key: "Turkistan",
     en: "Shymkent",
-    ru: "Шымкент"
+    ru: "Шымкент",
   },
   {
     key: "Jambyl",
     en: "Taraz",
-    ru: "Тараз"
+    ru: "Тараз",
   },
   {
     key: "Almaty",
     en: "Almaty",
-    ru: "Алматы"
+    ru: "Алматы",
   },
   {
     key: "Oskemen",
     en: ["", "Oskemen"],
-    ru: ["Усть-", "Каменогорск"]
+    ru: ["Усть-", "Каменогорск"],
   },
   {
     key: "Jetisu",
     en: "Taldykorgan",
-    ru: "Талдыкорган"
+    ru: "Талдыкорган",
   },
   {
     key: "Abai",
     en: "Semey",
-    ru: "Семей"
+    ru: "Семей",
   },
   {
     key: "Ulytau",
     en: "Jezkazgan",
-    ru: "Жезказган"
+    ru: "Жезказган",
   },
   {
     key: "Qostanai",
     en: "Kostanay",
-    ru: "Костанай"
+    ru: "Костанай",
   },
   {
     key: "Petropavl",
     en: "Petropavl",
-    ru: "Петропавловск"
+    ru: "Петропавловск",
   },
   {
     key: "Astana",
     en: "Astana",
-    ru: "Астана"
+    ru: "Астана",
   },
   {
     key: "Karaganda",
     en: "Karaganda",
-    ru: "Караганда"
+    ru: "Караганда",
   },
   {
     key: "Pavlodar",
     en: "Pavlodar",
-    ru: "Павлодар"
+    ru: "Павлодар",
   },
   {
     key: "Osh",
     en: "Osh",
-    ru: "Ош"
+    ru: "Ош",
   },
   {
     key: "Naryn",
     en: "Naryn",
-    ru: "Нарын"
+    ru: "Нарын",
   },
   {
     key: "Jalal-Abad",
     en: "Jalal-Abad",
-    ru: "Джалал-Абад"
+    ru: "Джалал-Абад",
   },
   {
     key: "Bishkek",
     en: "Bishkek",
-    ru: "Бишкек"
+    ru: "Бишкек",
   },
   {
     key: "Talas",
     en: "Talas",
-    ru: "Талас"
+    ru: "Талас",
   },
   {
     key: "Karakol",
     en: "Karakol",
-    ru: "Каракол"
+    ru: "Каракол",
   },
   {
     key: "Batken",
     en: "Batken",
-    ru: "Баткен"
+    ru: "Баткен",
   },
   {
     key: "Karakalpakstan",
     en: "Nukus",
-    ru: "Нукус"
+    ru: "Нукус",
   },
   {
     key: "Surxondaryo",
     en: "Termez",
-    ru: "Термез"
+    ru: "Термез",
   },
   {
     key: "Fergana",
     en: "Fergana",
-    ru: "Фергана"
+    ru: "Фергана",
   },
   {
     key: "Andijon",
     en: "Andijon",
-    ru: "Андижан"
+    ru: "Андижан",
   },
   {
     key: "Namangan",
     en: "Namangan",
-    ru: "Наманган"
+    ru: "Наманган",
   },
   {
     key: "Jizzax",
     en: "Jizzax",
-    ru: "Джизак"
+    ru: "Джизак",
   },
   {
     key: "Navoiy",
     en: "Navoiy",
-    ru: "Навои"
+    ru: "Навои",
   },
   {
     key: "Buxoro",
     en: "Bukhara",
-    ru: "Бухара"
+    ru: "Бухара",
   },
   {
     key: "Qashqadaryo",
     en: "Karshi",
-    ru: "Карши"
+    ru: "Карши",
   },
   {
     key: "Xorazm",
     en: "Khiva",
-    ru: "Хива"
+    ru: "Хива",
   },
   {
     key: "Sirdaryo",
     en: "Guliston",
-    ru: "Гулистан"
+    ru: "Гулистан",
   },
   {
     key: "Sogd",
     en: "Khujand",
-    ru: "Худжанд"
+    ru: "Худжанд",
   },
   {
     key: "Dushanbe",
     en: "Dushanbe",
-    ru: "Душанбе"
+    ru: "Душанбе",
   },
   {
     key: "Bokhtar",
     en: "Bokhtar",
-    ru: "Бохтар"
+    ru: "Бохтар",
   },
   {
     key: "Pamir",
     en: "Khorugh",
-    ru: "Хорог"
+    ru: "Хорог",
   },
   {
     key: "Dashoguz",
     en: "Dashoguz",
-    ru: "Дашогуз"
+    ru: "Дашогуз",
   },
   {
     key: "Ashgabat",
     en: "Ashgabat",
-    ru: "Ашхабад"
+    ru: "Ашхабад",
   },
   {
     key: "Balkanabat",
     en: "Balkanabat",
-    ru: "Балканабат"
+    ru: "Балканабат",
   },
   {
     key: "Mary",
     en: "Mary",
-    ru: "Мары"
+    ru: "Мары",
   },
   {
     key: "Lebap",
-    en: "Lebap",
-    ru: "Туркменабад"
-  }
+    en: "Türkmenabat",
+    ru: "Туркменабад",
+  },
 ];
 
 export const countries = sortedCountries.reduce((acc, { key, ...rest }) => {

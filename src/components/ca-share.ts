@@ -4,6 +4,7 @@ import { Locale } from "../data/locales";
 import html2canvas from "html2canvas";
 import labels from "../data/labels";
 import { encodeState } from "../utils/state-encoder";
+import saveIcon from "../assets/save-icon.svg";
 
 @customElement("ca-share")
 export default class CaShare extends LitElement {
@@ -22,7 +23,8 @@ export default class CaShare extends LitElement {
           <p>${labels.shareTextAfter[this.language]}</p>
         </div>
         <div class="canvas"></div>
-        <button class="primary" @click="${this.handleSave}">
+        <button class="primary large" @click="${this.handleSave}">
+          <img src="${saveIcon}" alt="Save icon" />
           ${labels.savePicture[this.language]}
         </button>
         <button @click="${this.handleClose}">

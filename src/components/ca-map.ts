@@ -113,7 +113,7 @@ export default class CaMap extends LitElement {
       display: flex;
       flex-direction: column;
     }
-    
+
     svg {
       height: 100%;
       width: 100%;

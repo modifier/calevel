@@ -25,8 +25,8 @@ export class CaSelectLevel extends LitElement {
       left: `${this.position?.x || 0}px`,
       visibility: this.position ? "visible" : "hidden",
     };
-    const levelsToSort = [ ...levels ];
-    levelsToSort.sort((a, b) => a.position < b.position ? -1 : 1);
+    const levelsToSort = [...levels];
+    levelsToSort.sort((a, b) => (a.position < b.position ? -1 : 1));
 
     return html`
       <div style=${styleMap(styles)}>

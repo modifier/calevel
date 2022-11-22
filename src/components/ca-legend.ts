@@ -9,8 +9,8 @@ export class CaLegend extends LitElement {
   language!: Locale;
 
   render() {
-    const levelsToSort = [ ...levels ];
-    levelsToSort.sort((a, b) => a.position < b.position ? -1 : 1);
+    const levelsToSort = [...levels];
+    levelsToSort.sort((a, b) => (a.position < b.position ? -1 : 1));
 
     return html`
       <div>
@@ -46,7 +46,7 @@ export class CaLegend extends LitElement {
       margin: 0;
       background-color: var(--ca-level-color);
       padding: 0 5px;
-      font-size: 0.7rem;
+      font-size: 0.8rem;
       display: flex;
       gap: 20px;
       justify-content: space-between;

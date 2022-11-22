@@ -39,4 +39,20 @@ export default {
     en: "Figure out my level",
     ru: "Определить свой уровень",
   },
+  author: {
+    en: "Author",
+    ru: "Автор",
+  },
+  me: {
+    en: "Evgeniy Amiraslanov",
+    ru: "Евгений Амирасланов",
+  },
+  inspiredBy: {
+    en: "Inspired by",
+    ru: "Вдохновлён проектом",
+  },
+  madeInToshkent: {
+    en: "2022. Made in Tashkent",
+    ru: "2022. Сделано в Ташкенте",
+  },
 };

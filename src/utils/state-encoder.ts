@@ -66,12 +66,11 @@ export function getSavedCountries(): Record<string, string> {
   return {};
 }
 
-const keyspace = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_";
+const keyspace =
+  "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_";
 
 // source: https://stackoverflow.com/questions/55646698/base-36-to-bigint
-function parseBigInt(
-  numberString: string, radix: number
-) {
+function parseBigInt(numberString: string, radix: number) {
   let result = 0n;
   const keyspaceLength = BigInt(radix);
   for (let i = 0; i < numberString.length; i++) {
