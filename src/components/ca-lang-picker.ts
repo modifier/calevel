@@ -1,6 +1,6 @@
 import { css, html, LitElement } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
-import { Locale, locales } from "../data/locales";
+import { Locale, locales, localeIcons } from "../data/locales";
 
 @customElement("ca-lang-picker")
 export default class CaLangPicker extends LitElement {
@@ -21,13 +21,15 @@ export default class CaLangPicker extends LitElement {
                 class="${this.language === key ? "selected-lang" : ""}"
                 @click="${this.menuSelectHandler}"
               >
+                <img src="${localeIcons[key as Locale]}" alt="Flag of ${name}" />
                 ${name}
               </li>`;
             })}
           </ul>
         </div>
         <button @click="${this.menuDropHandler}">
-          ${locales[this.language]}
+          <img src="${localeIcons[this.language]}" alt="Flag of ${name}" />
+          <span>${locales[this.language]}</span>
         </button>
       </div>
     `;
@@ -78,6 +80,14 @@ export default class CaLangPicker extends LitElement {
       border-radius: 3px;
       padding: 6px 8px;
       cursor: pointer;
+      display: flex;
+      flex-direction: row;
+      gap: 0.25rem;
+      align-items: center;
+    }
+    
+    button img {
+      height: 1em;
     }
 
     ul {
@@ -93,6 +103,14 @@ export default class CaLangPicker extends LitElement {
       margin: 0;
       padding: 4px 10px;
       cursor: pointer;
+      display: flex;
+      flex-direction: row;
+      gap: 0.5em;
+      align-items: center;
+    }
+    
+    li img {
+      height: 1em;
     }
 
     li.selected-lang {

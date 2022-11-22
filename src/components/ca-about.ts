@@ -105,6 +105,10 @@ export default class CaAbout extends LitElement {
       flex-direction: column;
       gap: 1em;
     }
+    
+    ::backdrop {
+      background: rgb(0 0 0 / 30%);
+    }
 
     .credits p + p {
       margin-top: 0.25em;

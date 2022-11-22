@@ -16,7 +16,7 @@ export default class CaShare extends LitElement {
           <p>${labels.sharedText[this.language]}</p>
         </div>
         <div class="canvas"></div>
-        <button class="primary" @click="${this.handleClose}">
+        <button class="primary large" @click="${this.handleClose}">
           ${labels.drawOwn[this.language]}
         </button>
       </div>

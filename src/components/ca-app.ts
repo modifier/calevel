@@ -194,6 +194,10 @@ export class CaApp extends LitElement {
       border-radius: 3px;
       padding: 6px 8px;
       cursor: pointer;
+      display: flex;
+      flex-direction: row;
+      gap: 0.25rem;
+      align-items: center;
     }
 
     button.primary {

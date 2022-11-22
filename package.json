@@ -18,6 +18,7 @@
     "prettier": "npx prettier --write ."
   },
   "dependencies": {
+    "flag-icons": "^6.6.6",
     "html2canvas": "^1.4.1",
     "lit": "^2.4.0"
   },
