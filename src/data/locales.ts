@@ -13,4 +13,4 @@ export const DEFAULT_LOCALE: Locale = "ru";
 export const localeIcons: Record<Locale, string> = {
   en: enFlag,
   ru: ruFlag,
-}
+};

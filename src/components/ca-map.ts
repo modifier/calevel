@@ -4,12 +4,11 @@ import { unsafeHTML } from "lit/directives/unsafe-html.js";
 import Map from "../assets/map.svg?raw";
 import { countries } from "../data/countries";
 import levels from "../data/levels";
-import { Locale } from "../data/locales";
+import { LocaleController } from "../controllers/locale-controller";
 
 @customElement("ca-map")
 export default class CaMap extends LitElement {
-  @property()
-  language!: Locale;
+  private locale = new LocaleController(this);
 
   @property({ type: Object })
   private levelsByCountry: Record<string, string> = {};
@@ -24,7 +23,6 @@ export default class CaMap extends LitElement {
     return html`
       <div>${unsafeHTML(Map)}</div>
       <ca-select-level
-        language="${this.language}"
         country="${this.selectedCountry}"
         position="${JSON.stringify(this.position)}"
       ></ca-select-level>
@@ -58,12 +56,7 @@ export default class CaMap extends LitElement {
       this.updateCountryColors();
     }
 
-    if (
-      changedProperties.has("levelsByCountry") ||
-      changedProperties.has("language")
-    ) {
-      this.updateCountryLabels();
-    }
+    this.updateCountryLabels();
   }
 
   private countryClickHandler(e: Event, country: string) {
@@ -83,7 +76,7 @@ export default class CaMap extends LitElement {
       const elements = this.renderRoot.querySelectorAll(
         `[data-country-name=${countryKey}]`
       ) as unknown as SVGTextElement[];
-      const label = countryName[this.language];
+      const label = this.locale.t(countryName);
       for (let i = 0; i < elements.length; i++) {
         elements[i].innerHTML = Array.isArray(label) ? label[i] : label;
       }

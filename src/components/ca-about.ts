@@ -1,15 +1,14 @@
 import { css, html, LitElement } from "lit";
-import { customElement, property, state } from "lit/decorators.js";
+import { customElement, state } from "lit/decorators.js";
 import telegramIcon from "../assets/telegram-icon.svg";
 import githubIcon from "../assets/github-icon.svg";
 import homeIcon from "../assets/home-icon.svg";
-import { Locale } from "../data/locales";
 import labels from "../data/labels";
+import { LocaleController } from "../controllers/locale-controller";
 
 @customElement("ca-about")
 export default class CaAbout extends LitElement {
-  @property()
-  language!: Locale;
+  private locale = new LocaleController(this);
 
   @state()
   isShown = false;
@@ -20,8 +19,8 @@ export default class CaAbout extends LitElement {
       <dialog>
         <div class="credits">
           <p>
-            <strong>${labels.author[this.language]}</strong>:
-            ${labels.me[this.language]}
+            <strong>${this.locale.t(labels.author)}</strong>:
+            ${this.locale.t(labels.me)}
             <a href="https://t.me/modifiertravels" target="_blank"
               ><img src="${telegramIcon}" alt="Telegram Logo"
             /></a>
@@ -30,7 +29,7 @@ export default class CaAbout extends LitElement {
 
         <div class="inspired">
           <p>
-            ${labels.inspiredBy[this.language]}
+            ${this.locale.t(labels.inspiredBy)}
             <a
               href="https://tenpages.github.io/us-level/eu.html"
               target="_blank"
@@ -39,7 +38,7 @@ export default class CaAbout extends LitElement {
           </p>
         </div>
         <div class="madein">
-          <p>${labels.madeInToshkent[this.language]}</p>
+          <p>${this.locale.t(labels.madeInToshkent)}</p>
         </div>
 
         <p class="additional">
@@ -56,7 +55,7 @@ export default class CaAbout extends LitElement {
 
         <div class="close">
           <button @click="${this.closeDialog}">
-            ${labels.close[this.language]}
+            ${this.locale.t(labels.close)}
           </button>
         </div>
       </dialog>
@@ -105,7 +104,7 @@ export default class CaAbout extends LitElement {
       flex-direction: column;
       gap: 1em;
     }
-    
+
     ::backdrop {
       background: rgb(0 0 0 / 30%);
     }

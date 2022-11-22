@@ -1,15 +1,14 @@
 import { html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import { Locale } from "../data/locales";
 import html2canvas from "html2canvas";
 import labels from "../data/labels";
 import { encodeState } from "../utils/state-encoder";
 import saveIcon from "../assets/save-icon.svg";
+import { LocaleController } from "../controllers/locale-controller";
 
 @customElement("ca-share")
 export default class CaShare extends LitElement {
-  @property()
-  private language!: Locale;
+  private locale = new LocaleController(this);
 
   @property({ type: Object })
   private levelsByCountry!: Record<string, string>;
@@ -18,17 +17,17 @@ export default class CaShare extends LitElement {
     return html`
       <div class="ca-share">
         <div>
-          <p>${labels.shareTextBefore[this.language]}</p>
+          <p>${this.locale.t(labels.shareTextBefore)}</p>
           <code>${this.shareUrl}</code>
-          <p>${labels.shareTextAfter[this.language]}</p>
+          <p>${this.locale.t(labels.shareTextAfter)}</p>
         </div>
         <div class="canvas"></div>
         <button class="primary large" @click="${this.handleSave}">
           <img src="${saveIcon}" alt="Save icon" />
-          ${labels.savePicture[this.language]}
+          ${this.locale.t(labels.savePicture)}
         </button>
         <button @click="${this.handleClose}">
-          ${labels.close[this.language]}
+          ${this.locale.t(labels.close)}
         </button>
       </div>
     `;

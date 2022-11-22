@@ -1,12 +1,11 @@
 import { LitElement, css, html } from "lit";
-import { customElement, property } from "lit/decorators.js";
+import { customElement } from "lit/decorators.js";
 import levels from "../data/levels";
-import { Locale } from "../data/locales";
+import { LocaleController } from "../controllers/locale-controller";
 
 @customElement("ca-legend")
 export class CaLegend extends LitElement {
-  @property()
-  language!: Locale;
+  private locale = new LocaleController(this);
 
   render() {
     const levelsToSort = [...levels];
@@ -17,7 +16,7 @@ export class CaLegend extends LitElement {
         <ul>
           ${levelsToSort.map(({ text, value, color }) => {
             return html`<li style="--ca-level-color: ${color}">
-              <span>${text[this.language]}</span>
+              <span>${this.locale.t(text)}</span>
               <span>${value}pts</span>
             </li>`;
           })}

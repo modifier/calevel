@@ -1,11 +1,11 @@
 import { css, html, LitElement } from "lit";
-import { customElement, property, state } from "lit/decorators.js";
+import { customElement, state } from "lit/decorators.js";
 import { Locale, locales, localeIcons } from "../data/locales";
+import { LocaleController } from "../controllers/locale-controller";
 
 @customElement("ca-lang-picker")
 export default class CaLangPicker extends LitElement {
-  @property()
-  private language!: Locale;
+  private locale = new LocaleController(this);
 
   @state()
   private isShown = false;
@@ -18,18 +18,21 @@ export default class CaLangPicker extends LitElement {
             ${Object.entries(locales).map(([key, name]) => {
               return html`<li
                 data-lang="${key}"
-                class="${this.language === key ? "selected-lang" : ""}"
+                class="${this.locale.locale === key ? "selected-lang" : ""}"
                 @click="${this.menuSelectHandler}"
               >
-                <img src="${localeIcons[key as Locale]}" alt="Flag of ${name}" />
+                <img
+                  src="${localeIcons[key as Locale]}"
+                  alt="Flag of ${name}"
+                />
                 ${name}
               </li>`;
             })}
           </ul>
         </div>
         <button @click="${this.menuDropHandler}">
-          <img src="${localeIcons[this.language]}" alt="Flag of ${name}" />
-          <span>${locales[this.language]}</span>
+          <img src="${this.locale.t(localeIcons)}" alt="Flag of ${name}" />
+          <span>${locales[this.locale.locale]}</span>
         </button>
       </div>
     `;
@@ -53,7 +56,7 @@ export default class CaLangPicker extends LitElement {
     const lang = item.dataset.lang as string;
     this.isShown = false;
 
-    this.dispatchEvent(new CustomEvent("selectLang", { detail: { lang } }));
+    LocaleController.setLocale(lang as Locale);
   }
 
   static styles = css`
@@ -88,7 +91,7 @@ export default class CaLangPicker extends LitElement {
       font-weight: 500;
       padding: 8px;
     }
-    
+
     button img {
       height: 1em;
     }
@@ -111,7 +114,7 @@ export default class CaLangPicker extends LitElement {
       gap: 0.5em;
       align-items: center;
     }
-    
+
     li img {
       height: 1em;
     }

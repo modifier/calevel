@@ -1,18 +1,17 @@
 import { LitElement, css, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import labels from "../data/labels";
-import { Locale } from "../data/locales";
+import { LocaleController } from "../controllers/locale-controller";
 
 @customElement("ca-level-label")
 export class CaLevelLabel extends LitElement {
-  @property()
-  language!: Locale;
+  private locale = new LocaleController(this);
 
   @property()
   level: number = 0;
 
   render() {
-    return html`<h1>${labels.mainLabel[this.language]} ${this.level}</h1>`;
+    return html`<h1>${this.locale.t(labels.mainLabel)} ${this.level}</h1>`;
   }
 
   static styles = css`

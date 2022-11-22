@@ -1,23 +1,22 @@
 import { html, LitElement } from "lit";
-import { customElement, property } from "lit/decorators.js";
-import { Locale } from "../data/locales";
+import { customElement } from "lit/decorators.js";
 import html2canvas from "html2canvas";
 import labels from "../data/labels";
+import { LocaleController } from "../controllers/locale-controller";
 
 @customElement("ca-shared")
 export default class CaShare extends LitElement {
-  @property()
-  private language!: Locale;
+  private locale = new LocaleController(this);
 
   render() {
     return html`
       <div class="ca-share">
         <div>
-          <p>${labels.sharedText[this.language]}</p>
+          <p>${this.locale.t(labels.sharedText)}</p>
         </div>
         <div class="canvas"></div>
         <button class="primary large" @click="${this.handleClose}">
-          ${labels.drawOwn[this.language]}
+          ${this.locale.t(labels.drawOwn)}
         </button>
       </div>
     `;

@@ -10,24 +10,23 @@ import "../components/ca-lang-picker";
 import "../components/ca-share";
 import "../components/ca-shared";
 import "../components/ca-about";
-import { Locale } from "../data/locales";
 import labels from "../data/labels";
 import { getDefaultLocale } from "../utils/locale";
 import { getSavedCountries, getSharedState } from "../utils/state-encoder";
 import shareIcon from "../assets/share-icon.svg";
 import undoIcon from "../assets/undo-icon.svg";
+import { LocaleController } from "../controllers/locale-controller";
 
 @customElement("ca-app")
 export class CaApp extends LitElement {
+  private locale = new LocaleController(this);
+
   @state()
   private storedLevelsByCountry: Record<string, string> | null = null;
 
   @state()
   private savedBeforeSharingLevelsByCountry: Record<string, string> | null =
     null;
-
-  @state()
-  private language: Locale;
 
   @state()
   private sharing = false;
@@ -49,7 +48,7 @@ export class CaApp extends LitElement {
   constructor() {
     super();
 
-    this.language = getDefaultLocale();
+    LocaleController.setLocale(getDefaultLocale());
     this._levelsByCountry = getSavedCountries();
     const sharedState = getSharedState();
     if (sharedState) {
@@ -78,53 +77,42 @@ export class CaApp extends LitElement {
           ? "ca-map-container--sharing"
           : ""}"
       >
-        <ca-level-label
-          language="${this.language}"
-          level="${totalLevel}"
-        ></ca-level-label>
-        <ca-legend language="${this.language}"></ca-legend>
+        <ca-level-label level="${totalLevel}"></ca-level-label>
+        <ca-legend></ca-legend>
         <ca-map
-          language="${this.language}"
           levelsByCountry="${JSON.stringify(this.levelsByCountry)}"
           @change="${this.handleLevelChange}"
         ></ca-map>
       </div>
       <div class="about">
-        <ca-about language="${this.language}"></ca-about>
+        <ca-about></ca-about>
       </div>
       <nav>
         ${isDirty
           ? html`<button class="large" @click="${this.handleReset}">
-              ${labels.reset[this.language]}
+              ${this.locale.t(labels.reset)}
             </button>`
           : nothing}
         ${this.storedLevelsByCountry
           ? html`<button @click="${this.handleRestore}">
               <img src="${undoIcon}" alt="Undo icon" />
-              ${labels.restore[this.language]}
+              ${this.locale.t(labels.restore)}
             </button>`
           : nothing}
-        <ca-lang-picker
-          language="${this.language}"
-          @selectLang="${this.handleLanguageChange}"
-        ></ca-lang-picker>
+        <ca-lang-picker></ca-lang-picker>
         <button class="primary large" @click="${this.handleShare}">
           <img src="${shareIcon}" alt="Share icon" />
-          ${labels.share[this.language]}
+          ${this.locale.t(labels.share)}
         </button>
       </nav>
       ${this.sharing
         ? html`<ca-share
-            language="${this.language}"
             @close="${this.handleCloseShare}"
             levelsByCountry="${JSON.stringify(this.levelsByCountry)}"
           ></ca-share>`
         : nothing}
       ${this.savedBeforeSharingLevelsByCountry
-        ? html`<ca-shared
-            language="${this.language}"
-            @close="${this.handleCloseShared}"
-          ></ca-shared>`
+        ? html`<ca-shared @close="${this.handleCloseShared}"></ca-shared>`
         : nothing}
     `;
   }
@@ -138,13 +126,6 @@ export class CaApp extends LitElement {
     if (levelKey !== "default") {
       this.storedLevelsByCountry = null;
     }
-  }
-
-  private handleLanguageChange({
-    detail: { lang },
-  }: CustomEvent<{ lang: Locale }>) {
-    this.language = lang;
-    localStorage.setItem("lang", lang);
   }
 
   private handleReset() {
