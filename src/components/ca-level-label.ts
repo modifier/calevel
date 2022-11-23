@@ -15,8 +15,11 @@ export class CaLevelLabel extends LitElement {
   }
 
   static styles = css`
+    :host {
+      display: block;
+    }
+
     h1 {
-      padding: 1rem;
       margin: 0;
     }
 

@@ -122,8 +122,6 @@ export default class CaMap extends LitElement {
     svg {
       height: 100%;
       width: 100%;
-      min-width: 40rem;
-      min-height: 30rem;
     }
 
     path:focus {

@@ -22,7 +22,9 @@ export function encodeState(levelsByCountry: Record<string, string>): string {
 export function decodeState(code: string): Record<string, string> {
   const stateNumber = parseBigInt(code, RADIX);
 
-  const sortedState = stateNumber.toString(levels.length);
+  const sortedState = stateNumber
+    .toString(levels.length)
+    .padStart(sortedCountries.length, "0");
   const state: Record<string, string> = {};
   for (let i = 0; i < sortedState.length; i++) {
     const levelLetter = sortedState[i];

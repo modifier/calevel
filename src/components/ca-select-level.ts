@@ -81,9 +81,9 @@ export class CaSelectLevel extends LitElement {
       div {
         position: fixed;
         top: 1rem;
-        left: 0;
+        left: 50%;
         right: 0;
-        transform: translateX(50%);
+        transform: translateX(-50%);
         width: max-content;
       }
     }

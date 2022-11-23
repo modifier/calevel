@@ -92,7 +92,7 @@ export class CaApp extends LitElement {
               </button>`
             : nothing}
           ${this.storedLevelsByCountry
-            ? html`<button @click="${this.handleRestore}">
+            ? html`<button class="large" @click="${this.handleRestore}">
                 <ca-icon name="undo"></ca-icon>
                 ${this.locale.t(labels.restore)}
               </button>`
@@ -189,6 +189,7 @@ export class CaApp extends LitElement {
       position: absolute;
       top: 0;
       right: 0;
+      margin: 1rem 0;
     }
 
     ca-legend {
@@ -226,23 +227,20 @@ export class CaApp extends LitElement {
 
     @media (max-aspect-ratio: 1/1), (max-width: 48rem) {
       .ca-map-container:not(.ca-map-container--sharing) ca-level-label {
-        left: 0;
         width: 100%;
         text-align: center;
+        position: static;
+        margin-bottom: 0;
       }
 
       .ca-map-container:not(.ca-map-container--sharing) {
-        height: min-content;
-        min-height: auto;
         flex: 1 0 auto;
-        width: max-content;
       }
 
       .ca-map-container:not(.ca-map-container--sharing) ca-map {
         padding: 1em;
-        width: min-content;
-        height: min-content;
         display: block;
+        height: max-content;
       }
     }
 
