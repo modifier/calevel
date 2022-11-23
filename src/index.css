@@ -62,7 +62,8 @@ body {
   }
 }
 
-body.backdrop {
+html.backdrop,
+html.backdrop body {
   overflow: hidden;
 }
 

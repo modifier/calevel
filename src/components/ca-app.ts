@@ -53,7 +53,7 @@ export class CaApp extends LitElement {
     if (sharedState) {
       this.savedBeforeSharingLevelsByCountry = this.levelsByCountry;
       this._levelsByCountry = sharedState;
-      document.body.classList.add("backdrop");
+      document.documentElement.classList.add("backdrop");
     }
   }
 
@@ -139,18 +139,18 @@ export class CaApp extends LitElement {
 
   private handleShare() {
     this.sharing = true;
-    document.body.classList.add("backdrop");
+    document.documentElement.classList.add("backdrop");
   }
 
   private handleCloseShare() {
     this.sharing = false;
-    document.body.classList.remove("backdrop");
+    document.documentElement.classList.remove("backdrop");
   }
 
   private handleCloseShared() {
     this._levelsByCountry = this.savedBeforeSharingLevelsByCountry || {};
     this.savedBeforeSharingLevelsByCountry = null;
-    document.body.classList.remove("backdrop");
+    document.documentElement.classList.remove("backdrop");
     window.history.pushState({}, document.title, "/");
   }
 
@@ -188,7 +188,7 @@ export class CaApp extends LitElement {
     ca-level-label {
       position: absolute;
       top: 0;
-      right: 0;
+      right: 1rem;
       margin: 1rem 0;
     }
 
@@ -235,6 +235,8 @@ export class CaApp extends LitElement {
 
       .ca-map-container:not(.ca-map-container--sharing) {
         flex: 1 0 auto;
+        height: auto;
+        min-height: auto;
       }
 
       .ca-map-container:not(.ca-map-container--sharing) ca-map {
@@ -324,7 +326,6 @@ export class CaApp extends LitElement {
 
     .ca-share {
       position: fixed;
-      inset: 0 0 0 0;
       background-color: white;
       display: flex;
       align-items: center;
@@ -333,6 +334,11 @@ export class CaApp extends LitElement {
       gap: 16px;
       padding: 16px;
       overflow: auto;
+      width: 100vw;
+      height: 100vh;
+      box-sizing: border-box;
+      top: 0;
+      left: 0;
     }
 
     .canvas {
