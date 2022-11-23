@@ -12,7 +12,7 @@ const levels = [
   {
     key: "wannabe",
     text: {
-      en: "Want to be here",
+      en: "Want to be there",
       ru: "Приехал бы",
     },
     value: 0,
@@ -32,7 +32,7 @@ const levels = [
   {
     key: "stopped",
     text: {
-      en: "Stopped here",
+      en: "Stopped there",
       ru: "Останавливался на ночь",
     },
     value: 2,
@@ -42,7 +42,7 @@ const levels = [
   {
     key: "visited",
     text: {
-      en: "Visited here",
+      en: "Visited there",
       ru: "Посещал",
     },
     value: 3,
@@ -52,7 +52,7 @@ const levels = [
   {
     key: "stayed",
     text: {
-      en: "Traveled here",
+      en: "Traveled there",
       ru: "Путешествовал тут",
     },
     value: 4,
@@ -62,7 +62,7 @@ const levels = [
   {
     key: "lived",
     text: {
-      en: "Lived here",
+      en: "Lived there",
       ru: "Жил тут",
     },
     value: 5,

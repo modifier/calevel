@@ -6,6 +6,7 @@
   line-height: 24px;
   font-weight: 400;
   height: 100%;
+  --vh: 1vh;
 
   color: #213547;
 
