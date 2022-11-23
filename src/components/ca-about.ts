@@ -96,7 +96,7 @@ export default class CaAbout extends LitElement {
       cursor: pointer;
     }
 
-    :modal {
+    dialog {
       min-width: 300px;
       display: flex;
       flex-direction: column;
