@@ -78,6 +78,12 @@ export class CaSelectLevel extends LitElement {
       z-index: 1;
     }
 
+    @media screen and (max-width: 48rem) {
+      div {
+        width: max-content;
+      }
+    }
+
     h2 {
       margin: 0;
       padding: 4px 10px;

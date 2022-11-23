@@ -333,6 +333,7 @@ export class CaApp extends LitElement {
       background-color: white;
       width: 100vw;
       height: 100vh;
+      overflow: auto;
       top: 0;
       left: 0;
     }
@@ -344,7 +345,6 @@ export class CaApp extends LitElement {
       flex-direction: column;
       gap: 16px;
       padding: 1rem 1rem 3rem;
-      overflow: auto;
       box-sizing: border-box;
       width: 100%;
       min-height: 100%;

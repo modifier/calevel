@@ -34,7 +34,7 @@ export default class CaCode extends LitElement {
       background-color: #eee;
       font-family: Consolas, monospace;
       border-radius: 4px;
-      width: 100%;
+      max-width: 100%;
       box-shadow: -1px -1px 1px inset rgb(0 0 0 / 10%);
       font-size: 0.9em;
       padding: 4px 8px;
