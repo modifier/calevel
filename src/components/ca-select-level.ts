@@ -75,6 +75,7 @@ export class CaSelectLevel extends LitElement {
       transform: translate(-50%, -50%);
       top: var(--top);
       left: var(--left);
+      z-index: 1;
     }
 
     @media screen and (max-width: 48rem) {

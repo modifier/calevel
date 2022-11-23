@@ -319,33 +319,40 @@ export class CaApp extends LitElement {
     }
 
     .share-buttons {
+      flex: 1 0 auto;
       display: flex;
       flex-direction: column;
       gap: 1rem;
+      justify-content: flex-end;
+    }
+
+    ca-share,
+    ca-shared {
+      display: block;
+      position: fixed;
+      background-color: white;
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      left: 0;
     }
 
     .ca-share {
-      position: fixed;
-      background-color: white;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
       gap: 16px;
-      padding: 16px;
+      padding: 1rem 1rem 3rem;
       overflow: auto;
-      width: 100vw;
-      height: 100vh;
       box-sizing: border-box;
-      top: 0;
-      left: 0;
+      width: 100%;
+      min-height: 100%;
     }
 
     .canvas {
       flex: 0 1 auto;
-      height: 480px;
-      max-width: 100%;
-      aspect-ratio: 4/3;
+      max-width: min(600px, 100%);
     }
 
     .canvas canvas {
