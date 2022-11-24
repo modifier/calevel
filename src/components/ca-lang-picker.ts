@@ -52,7 +52,7 @@ export default class CaLangPicker extends LitElement {
   private menuSelectHandler(e: MouseEvent) {
     e.stopPropagation();
 
-    const item = e.target as HTMLLinkElement;
+    const item = (e.target as HTMLElement).closest("li") as HTMLLIElement;
     const lang = item.dataset.lang as string;
     this.isShown = false;
 

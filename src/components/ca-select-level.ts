@@ -27,6 +27,11 @@ export class CaSelectLevel extends LitElement {
     this.updateSize();
   }
 
+  protected update(changedProperties: PropertyValues): void {
+    super.update(changedProperties);
+    this.updateSize();
+  }
+
   disconnectedCallback(): void {
     super.disconnectedCallback();
     window.removeEventListener("resize", () => this.updateSize());
