@@ -3,6 +3,7 @@ const levels = [
     key: "default",
     text: {
       en: "Never been there",
+      uz: "Never been there",
       ru: "Никогда тут не был",
     },
     value: 0,
@@ -13,6 +14,7 @@ const levels = [
     key: "wannabe",
     text: {
       en: "Want to be there",
+      uz: "Want to be there",
       ru: "Приехал бы",
     },
     value: 0,
@@ -23,6 +25,7 @@ const levels = [
     key: "transit",
     text: {
       en: "Passed here",
+      uz: "Passed here",
       ru: "Проезжал мимо",
     },
     value: 1,
@@ -33,6 +36,7 @@ const levels = [
     key: "stopped",
     text: {
       en: "Stopped there",
+      uz: "Stopped there",
       ru: "Останавливался на ночь",
     },
     value: 2,
@@ -43,6 +47,7 @@ const levels = [
     key: "visited",
     text: {
       en: "Visited there",
+      uz: "Visited there",
       ru: "Посещал",
     },
     value: 3,
@@ -53,6 +58,7 @@ const levels = [
     key: "stayed",
     text: {
       en: "Traveled there",
+      uz: "Traveled there",
       ru: "Путешествовал тут",
     },
     value: 4,
@@ -63,6 +69,7 @@ const levels = [
     key: "lived",
     text: {
       en: "Lived there",
+      uz: "Lived there",
       ru: "Жил тут",
     },
     value: 5,
