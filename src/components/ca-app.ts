@@ -62,17 +62,19 @@ export class CaApp extends LitElement {
 
     // solution from here: https://stackoverflow.com/questions/61264725/chrome-for-android-hides-address-bar-when-scrolling-expands-background-image-be
     this.updateVh();
-    document.addEventListener("resize", this.updateVh);
+    window.addEventListener("resize", this.updateVh);
   }
 
   disconnectedCallback(): void {
     super.disconnectedCallback();
-    document.removeEventListener("resize", this.updateVh);
+    window.removeEventListener("resize", this.updateVh);
   }
 
   updateVh() {
     const vh = window.innerHeight * 0.01;
+    const vw = window.innerWidth * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
+    document.documentElement.style.setProperty("--vw", `${vw}px`);
   }
 
   render() {

@@ -1,9 +1,10 @@
-import { LitElement, css, html, nothing } from "lit";
+import { LitElement, css, html } from "lit";
 import { styleMap } from "lit-html/directives/style-map.js";
 import { customElement, property } from "lit/decorators.js";
 import levels from "../data/levels";
 import { LocaleController } from "../controllers/locale-controller";
 import { countries } from "../data/countries";
+import { PropertyValues } from "@lit/reactive-element";
 
 type CaSelectDetail = { country: string; levelKey: string };
 
@@ -19,6 +20,29 @@ export class CaSelectLevel extends LitElement {
   @property({ type: Object })
   position: { x: 0; y: 0 } | null = null;
 
+  firstUpdated(_changedProperties: PropertyValues): void {
+    super.firstUpdated(_changedProperties);
+
+    window.addEventListener("resize", () => this.updateSize());
+    this.updateSize();
+  }
+
+  disconnectedCallback(): void {
+    super.disconnectedCallback();
+    window.removeEventListener("resize", () => this.updateSize());
+  }
+
+  updateSize() {
+    let div = this.renderRoot.querySelector("div");
+    if (!div) {
+      return;
+    }
+    const width = div.offsetWidth;
+    const height = div.offsetHeight;
+    div.style.setProperty("--ih", `${height}px`);
+    div.style.setProperty("--iw", `${width}px`);
+  }
+
   render() {
     const styles = {
       "--top": `${this.position?.y || 0}px`,
@@ -31,7 +55,9 @@ export class CaSelectLevel extends LitElement {
     return html`
       <div style=${styleMap(styles)}>
         <h2>
-          ${this.country ? this.locale.t(countries[this.country]) : nothing}
+          ${this.country
+            ? this.locale.t(countries[this.country])
+            : "Усть-Каменогорск"}
         </h2>
         <ul>
           ${levelsToSort.map(({ key, text, color }) => {
@@ -72,9 +98,14 @@ export class CaSelectLevel extends LitElement {
       border: 0.25em solid black;
       text-align: center;
       box-shadow: 3px 6px 0 rgb(0 0 0 / 10%);
-      transform: translate(-50%, -50%);
-      top: var(--top);
-      left: var(--left);
+      top: min(
+        max(0px, calc(var(--top) - 0.5 * var(--ih))),
+        calc(100 * var(--vh) - var(--ih) - 1rem)
+      );
+      left: min(
+        max(0px, calc(var(--left) - 0.5 * var(--iw))),
+        calc(100 * var(--vw) - var(--iw) - 1rem)
+      );
       z-index: 1;
     }
 
