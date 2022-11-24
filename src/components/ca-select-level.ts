@@ -69,7 +69,7 @@ export class CaSelectLevel extends LitElement {
       position: absolute;
       background: white;
       border-radius: 4px;
-      border: 4px solid black;
+      border: 0.25em solid black;
       text-align: center;
       box-shadow: 3px 6px 0 rgb(0 0 0 / 10%);
       transform: translate(-50%, -50%);
@@ -81,13 +81,14 @@ export class CaSelectLevel extends LitElement {
     @media screen and (max-width: 48rem) {
       div {
         width: max-content;
+        font-size: 0.9rem;
       }
     }
 
     h2 {
       margin: 0;
-      padding: 4px 10px;
-      line-height: 30px;
+      padding: 0.25em 0.5em;
+      line-height: 1.5em;
       font-weight: normal;
     }
 
@@ -100,7 +101,7 @@ export class CaSelectLevel extends LitElement {
     li {
       margin: 0;
       background-color: var(--ca-level-color);
-      padding: 4px 10px;
+      padding: 0.25em 0.5em;
       cursor: pointer;
     }
   `;

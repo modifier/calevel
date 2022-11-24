@@ -39,6 +39,10 @@ export default class CaIcon extends LitElement {
   }
 
   static styles = css`
+    :host {
+      height: 1em;
+    }
+
     span {
       display: inline-block;
       height: 1em;
