@@ -11,6 +11,7 @@ import homeIcon from "../assets/home-icon.svg?raw";
 import githubIcon from "../assets/github-icon.svg?raw";
 import enFlag from "flag-icons/flags/4x3/gb.svg?raw";
 import ruFlag from "flag-icons/flags/4x3/ru.svg?raw";
+import uzFlag from "flag-icons/flags/4x3/uz.svg?raw";
 
 @customElement("ca-icon")
 export default class CaIcon extends LitElement {
@@ -28,6 +29,7 @@ export default class CaIcon extends LitElement {
     github: githubIcon,
     enFlag: enFlag,
     ruFlag: ruFlag,
+    uzFlag: uzFlag,
   };
 
   render() {

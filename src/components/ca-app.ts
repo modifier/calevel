@@ -279,6 +279,7 @@ export class CaApp extends LitElement {
       align-items: center;
       width: 100%;
       justify-content: center;
+      white-space: nowrap;
     }
 
     button.primary {
