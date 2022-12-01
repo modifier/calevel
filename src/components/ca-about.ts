@@ -2,6 +2,7 @@ import { css, html, LitElement } from "lit";
 import { customElement, state } from "lit/decorators.js";
 import labels from "../data/labels";
 import { LocaleController } from "../controllers/locale-controller";
+import { unsafeHTML } from "lit/directives/unsafe-html.js";
 
 @customElement("ca-about")
 export default class CaAbout extends LitElement {
@@ -22,17 +23,29 @@ export default class CaAbout extends LitElement {
               ><ca-icon name="telegram"></ca-icon
             ></a>
           </p>
+
+          <p>
+            <strong>${this.locale.t(labels.translation)}</strong>:
+            ${this.locale.t(labels.umid)}
+            <a href="https://t.me/gafurovumid" target="_blank" tabindex="0"
+              ><ca-icon name="telegram"></ca-icon
+            ></a>
+          </p>
         </div>
 
         <div class="inspired">
           <p>
-            ${this.locale.t(labels.inspiredBy)}
-            <a
-              tabindex="0"
-              href="https://tenpages.github.io/us-level/eu.html"
-              target="_blank"
-              >Europe Level</a
-            >
+            ${unsafeHTML(
+              this.locale.t(labels.inspiredBy).replace(
+                "{}",
+                `<a
+                  tabindex="0"
+                  href="https://tenpages.github.io/us-level/eu.html"
+                  target="_blank"
+                  >Europe Level</a
+                >`
+              )
+            )}
           </p>
         </div>
         <div class="madein">

@@ -11,7 +11,9 @@ export class CaLevelLabel extends LitElement {
   level: number = 0;
 
   render() {
-    return html`<h1>${this.locale.t(labels.mainLabel)} ${this.level}</h1>`;
+    return html`<h1>
+      ${this.locale.t(labels.mainLabel).replace("{}", this.level.toString())}
+    </h1>`;
   }
 
   static styles = css`

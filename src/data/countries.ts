@@ -16,13 +16,13 @@ export const sortedCountries = [
   {
     key: "Aktobe",
     en: "Aktobe",
-    uz: "Aqto'be",
+    uz: "Aqtoʻbe",
     ru: "Актобе",
   },
   {
     key: "Oral",
     en: "Oral",
-    uz: "O'ral",
+    uz: "Oʻral",
     ru: "Уральск",
   },
   {
@@ -40,7 +40,7 @@ export const sortedCountries = [
   {
     key: "Qyzylorda",
     en: "Kyzylorda",
-    uz: "Qizilo'rda",
+    uz: "Qiziloʻrda",
     ru: "Кызылорда",
   },
   {
@@ -70,13 +70,13 @@ export const sortedCountries = [
   {
     key: "Oskemen",
     en: ["", "Oskemen"],
-    uz: ["", "O'skemen"],
+    uz: ["", "Oʻskemen"],
     ru: ["Усть-", "Каменогорск"],
   },
   {
     key: "Jetisu",
     en: "Taldykorgan",
-    uz: "Taldiqo'rg'an",
+    uz: "Taldiqoʻrgʻan",
     ru: "Талдыкорган",
   },
   {
@@ -88,13 +88,13 @@ export const sortedCountries = [
   {
     key: "Ulytau",
     en: "Jezkazgan",
-    uz: "Jezqazg'an",
+    uz: "Jezqazgʻan",
     ru: "Жезказган",
   },
   {
     key: "Qostanai",
     en: "Kostanay",
-    uz: "Qo'stanay",
+    uz: "Qoʻstanay",
     ru: "Костанай",
   },
   {
@@ -112,7 +112,7 @@ export const sortedCountries = [
   {
     key: "Karaganda",
     en: "Karaganda",
-    uz: "Qarag'andi",
+    uz: "Qaragʻandi",
     ru: "Караганда",
   },
   {
@@ -124,7 +124,7 @@ export const sortedCountries = [
   {
     key: "Osh",
     en: "Osh",
-    uz: "O'sh",
+    uz: "Oʻsh",
     ru: "Ош",
   },
   {
@@ -154,7 +154,7 @@ export const sortedCountries = [
   {
     key: "Karakol",
     en: "Karakol",
-    uz: "Qoraqo'l",
+    uz: "Qoraqoʻl",
     ru: "Каракол",
   },
   {
@@ -178,7 +178,7 @@ export const sortedCountries = [
   {
     key: "Fergana",
     en: "Fergana",
-    uz: "Farg'ona",
+    uz: "Fargʻona",
     ru: "Фергана",
   },
   {
@@ -232,7 +232,7 @@ export const sortedCountries = [
   {
     key: "Sogd",
     en: "Khujand",
-    uz: "Xo'jand",
+    uz: "Xoʻjand",
     ru: "Худжанд",
   },
   {
@@ -250,7 +250,7 @@ export const sortedCountries = [
   {
     key: "Pamir",
     en: "Khorugh",
-    uz: "Xorug'",
+    uz: "Xorugʻ",
     ru: "Хорог",
   },
   {
