@@ -18,6 +18,7 @@ export class LocaleController implements ReactiveController {
       host.requestUpdate();
     }
     localStorage.setItem("lang", locale);
+    document.documentElement.setAttribute("lang", locale);
   }
 
   get locale(): Locale {

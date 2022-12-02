@@ -42,6 +42,7 @@ export default class CaCode extends LitElement {
       display: inline-flex;
       justify-content: space-between;
       align-items: center;
+      gap: 0.5rem;
     }
 
     button {

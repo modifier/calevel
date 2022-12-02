@@ -31,6 +31,7 @@ export class CaLegend extends LitElement {
       border-radius: 4px;
       border: 2px solid black;
       width: max-content;
+      margin: 0 auto;
     }
 
     ul {

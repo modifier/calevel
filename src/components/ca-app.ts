@@ -237,10 +237,8 @@ export class CaApp extends LitElement {
       .ca-map-container:not(.ca-map-container--sharing) ca-legend {
         position: sticky;
         top: auto;
-        left: 50%;
-        transform: translateX(-50%);
-        right: initial;
-        width: fit-content;
+        left: 0;
+        right: 0;
         display: block;
       }
     }

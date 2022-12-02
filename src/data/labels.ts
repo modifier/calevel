@@ -60,9 +60,9 @@ export default {
     ru: "Евгений Амирасланов",
   },
   translation: {
-    en: "Translation",
-    uz: "Tarjima",
-    ru: "Перевод",
+    en: "Translation (uz)",
+    uz: "Tarjima (oʻz)",
+    ru: "Перевод (уз)",
   },
   umid: {
     en: "Umid Gafurov",
