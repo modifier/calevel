@@ -219,7 +219,7 @@ export class CaApp extends LitElement {
     }
 
     ca-map {
-      padding: 2em 1em;
+      padding: 3em 1em;
       box-sizing: border-box;
       display: block;
       height: 100%;
