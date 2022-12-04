@@ -51,7 +51,7 @@ const levels = [
       uz: "Tashrif buyurdim",
       ru: "Посещал",
     },
-    value: 3,
+    value: 2,
     position: 2,
     color: "#A8FFBE",
   },
