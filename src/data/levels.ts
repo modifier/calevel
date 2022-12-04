@@ -62,7 +62,7 @@ const levels = [
       uz: "Sayohat qildim",
       ru: "Путешествовал тут",
     },
-    value: 4,
+    value: 3,
     position: 1,
     color: "#FFB57E",
   },
