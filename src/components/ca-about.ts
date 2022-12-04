@@ -101,6 +101,7 @@ export default class CaAbout extends LitElement {
     }
 
     button {
+      color: black;
       background-color: #fff;
       box-shadow: 0 0 0 2px #111;
       border: 0;

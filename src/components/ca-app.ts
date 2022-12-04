@@ -278,6 +278,7 @@ export class CaApp extends LitElement {
       width: 100%;
       justify-content: center;
       white-space: nowrap;
+      color: black;
     }
 
     button.primary {
@@ -327,9 +328,8 @@ export class CaApp extends LitElement {
       nav {
         position: sticky;
         bottom: auto;
-        width: max-content;
-        left: 50%;
-        transform: translateX(-50%);
+        left: 0;
+        right: 0;
       }
       nav,
       nav .buttons {

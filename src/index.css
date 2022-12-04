@@ -75,6 +75,7 @@ button {
   border-radius: 3px;
   padding: 6px 8px;
   cursor: pointer;
+  color: black;
 }
 
 button.primary {
