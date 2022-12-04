@@ -8,7 +8,7 @@ export class CaLegend extends LitElement {
   private locale = new LocaleController(this);
 
   render() {
-    const levelsToSort = [...levels];
+    const levelsToSort = [...levels.filter((item) => !item.hidden)];
     levelsToSort.sort((a, b) => (a.position < b.position ? -1 : 1));
 
     return html`

@@ -15,7 +15,7 @@ const levels = [
     text: {
       en: "Want to be there",
       uz: "Bormoqchiman",
-      ru: "Приехал бы",
+      ru: "Хочу побывать тут",
     },
     value: 0,
     position: 5,
@@ -35,9 +35,9 @@ const levels = [
   {
     key: "stopped",
     text: {
-      en: "Stopped there",
-      uz: "Bir kecha tunadim",
-      ru: "Останавливался на ночь",
+      en: "Visited there",
+      uz: "Tashrif buyurdim",
+      ru: "Посещал",
     },
     value: 2,
     position: 3,
@@ -52,6 +52,7 @@ const levels = [
     },
     value: 3,
     position: 2,
+    hidden: true,
     color: "#FFE57E",
   },
   {

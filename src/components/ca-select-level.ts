@@ -54,7 +54,7 @@ export class CaSelectLevel extends LitElement {
       "--left": `${this.position?.x || 0}px`,
       visibility: this.position ? "visible" : "hidden",
     };
-    const levelsToSort = [...levels];
+    const levelsToSort = [...levels.filter((item) => !item.hidden)];
     levelsToSort.sort((a, b) => (a.position < b.position ? -1 : 1));
 
     return html`
