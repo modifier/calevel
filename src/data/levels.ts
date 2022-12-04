@@ -35,10 +35,11 @@ const levels = [
   {
     key: "stopped",
     text: {
-      en: "Visited there",
-      uz: "Tashrif buyurdim",
-      ru: "Посещал",
+      en: "Stopped there",
+      uz: "Bir kecha tunadim",
+      ru: "Останавливался на ночь",
     },
+    hidden: true,
     value: 2,
     position: 3,
     color: "#A8FFBE",
@@ -52,8 +53,7 @@ const levels = [
     },
     value: 3,
     position: 2,
-    hidden: true,
-    color: "#FFE57E",
+    color: "#A8FFBE",
   },
   {
     key: "stayed",
