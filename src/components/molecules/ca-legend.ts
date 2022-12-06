@@ -1,7 +1,7 @@
 import { LitElement, css, html } from "lit";
 import { customElement } from "lit/decorators.js";
-import levels from "../data/levels";
-import { LocaleController } from "../controllers/locale-controller";
+import levels from "../../data/levels";
+import { LocaleController } from "../../controllers/locale-controller";
 
 @customElement("ca-legend")
 export class CaLegend extends LitElement {

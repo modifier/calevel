@@ -1,8 +1,8 @@
 import { html, LitElement } from "lit";
 import { customElement } from "lit/decorators.js";
 import html2canvas from "html2canvas";
-import labels from "../data/labels";
-import { LocaleController } from "../controllers/locale-controller";
+import labels from "../../data/labels";
+import { LocaleController } from "../../controllers/locale-controller";
 
 @customElement("ca-shared")
 export default class CaShare extends LitElement {

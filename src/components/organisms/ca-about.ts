@@ -1,7 +1,7 @@
 import { css, html, LitElement } from "lit";
 import { customElement, state } from "lit/decorators.js";
-import labels from "../data/labels";
-import { LocaleController } from "../controllers/locale-controller";
+import labels from "../../data/labels";
+import { LocaleController } from "../../controllers/locale-controller";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 
 @customElement("ca-about")

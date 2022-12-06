@@ -1,10 +1,10 @@
 import { css, html, LitElement, PropertyValues } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
-import Map from "../assets/map.svg?raw";
-import { countries } from "../data/countries";
-import levels from "../data/levels";
-import { LocaleController } from "../controllers/locale-controller";
+import Map from "../../assets/map.svg?raw";
+import { countries } from "../../data/countries";
+import levels from "../../data/levels";
+import { LocaleController } from "../../controllers/locale-controller";
 
 @customElement("ca-map")
 export default class CaMap extends LitElement {

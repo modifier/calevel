@@ -1,7 +1,7 @@
 import { LitElement, css, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import labels from "../data/labels";
-import { LocaleController } from "../controllers/locale-controller";
+import labels from "../../data/labels";
+import { LocaleController } from "../../controllers/locale-controller";
 
 @customElement("ca-level-label")
 export class CaLevelLabel extends LitElement {

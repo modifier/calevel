@@ -1,10 +1,10 @@
 import { html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import html2canvas from "html2canvas";
-import labels from "../data/labels";
-import { encodeState } from "../utils/state-encoder";
-import { LocaleController } from "../controllers/locale-controller";
-import "./ca-code";
+import labels from "../../data/labels";
+import { encodeState } from "../../utils/state-encoder";
+import { LocaleController } from "../../controllers/locale-controller";
+import "../atoms/ca-code";
 
 @customElement("ca-share")
 export default class CaShare extends LitElement {

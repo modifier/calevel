@@ -1,9 +1,9 @@
 import { LitElement, css, html } from "lit";
 import { styleMap } from "lit-html/directives/style-map.js";
 import { customElement, property } from "lit/decorators.js";
-import levels from "../data/levels";
-import { LocaleController } from "../controllers/locale-controller";
-import { countries } from "../data/countries";
+import levels from "../../data/levels";
+import { LocaleController } from "../../controllers/locale-controller";
+import { countries } from "../../data/countries";
 import { PropertyValues } from "@lit/reactive-element";
 
 type CaSelectDetail = { country: string; levelKey: string };

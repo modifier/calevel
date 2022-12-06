@@ -1,7 +1,7 @@
 import { css, html, LitElement } from "lit";
 import { customElement, state } from "lit/decorators.js";
-import { Locale, locales, localeIcons } from "../data/locales";
-import { LocaleController } from "../controllers/locale-controller";
+import { Locale, locales, localeIcons } from "../../data/locales";
+import { LocaleController } from "../../controllers/locale-controller";
 
 @customElement("ca-lang-picker")
 export default class CaLangPicker extends LitElement {
