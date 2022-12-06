@@ -369,6 +369,10 @@ export class CaApp extends LitElement {
       min-height: 100%;
     }
 
+    .ca-share nav {
+      width: fit-content;
+    }
+
     .canvas {
       flex: 0 1 auto;
       max-width: min(600px, 100%);
