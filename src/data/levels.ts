@@ -1,3 +1,23 @@
+/**
+ * The list of supported levels.
+ *
+ * After the initial release this list must have the same order and none of the levels must be removed, otherwise the
+ * previously generated sharing links will stop working. If you need to change the order, use "position" property,
+ * and if you need to hide some level, set "hidden" to true.
+ *
+ * New levels can only be added in the end of the list.
+ *
+ * See also /src/utils/state-encorder.ts
+ *
+ * key - The unique key which represents the level.
+ * text - The list of strings shown in the legend and the level picker.
+ * value - The number of points assigned to each level.
+ * position - The position in the legend and the level picker.
+ * color - The background color of the level in the legend and level picker. Also, the background color of the
+ *         territories which have the same level.
+ * hidden - Whether to show this level in the level picker or the legend. Set this to true when some level becomes
+ *          deprecated.
+ */
 const levels = [
   {
     key: "default",

@@ -3,6 +3,9 @@ import { customElement } from "lit/decorators.js";
 import levels from "../../data/levels";
 import { LocaleController } from "../../controllers/locale-controller";
 
+/**
+ * A legend which represents the list of levels in the application.
+ */
 @customElement("ca-legend")
 export class CaLegend extends LitElement {
   private locale = new LocaleController(this);

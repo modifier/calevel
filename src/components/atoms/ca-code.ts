@@ -1,8 +1,14 @@
 import { css, html, LitElement } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 
+/**
+ * A line of monospaced text with the ability to be copied.
+ */
 @customElement("ca-code")
 export default class CaCode extends LitElement {
+  /**
+   * The text shown in the block of code.
+   */
   @property()
   private code!: string;
 

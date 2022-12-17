@@ -10,13 +10,22 @@ type CaSelectDetail = { country: string; levelKey: string };
 
 export class CaSelectEvent extends CustomEvent<CaSelectDetail> {}
 
+/**
+ * A level picker. When user chooses a level, it gets updated.
+ */
 @customElement("ca-select-level")
 export class CaSelectLevel extends LitElement {
   private locale = new LocaleController(this);
 
+  /**
+   * Territory which level is about to be updated.
+   */
   @property()
   country: string | null = null;
 
+  /**
+   * Position of the dropdown in the document.
+   */
   @property({ type: Object })
   position: { x: 0; y: 0 } | null = null;
 

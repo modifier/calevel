@@ -1,5 +1,17 @@
 import { Locale } from "./locales";
 
+/**
+ * The list of territories and their translations.
+ *
+ * You mustn't remove items from this list after the initial release or change the order. The sharing functionality
+ * depends on this order, if you change it, previously generated links will stop working.
+ *
+ * New levels can only be added in the end of the list.
+ *
+ * See also /src/utils/state-encorder.ts
+ *
+ * If some territory's name can be wrapped, use \n in the translation.
+ */
 export const sortedCountries = [
   {
     key: "Toshkent",
@@ -69,9 +81,9 @@ export const sortedCountries = [
   },
   {
     key: "Oskemen",
-    en: ["", "Oskemen"],
-    uz: ["", "Oʻskemen"],
-    ru: ["Усть-", "Каменогорск"],
+    en: "\nOskemen",
+    uz: "\nOʻskemen",
+    ru: "Усть-\nКаменогорск",
   },
   {
     key: "Jetisu",

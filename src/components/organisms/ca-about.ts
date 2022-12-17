@@ -4,6 +4,9 @@ import labels from "../../data/labels";
 import { LocaleController } from "../../controllers/locale-controller";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 
+/**
+ * A button which opens a dialog with the credits and links.
+ */
 @customElement("ca-about")
 export default class CaAbout extends LitElement {
   private locale = new LocaleController(this);

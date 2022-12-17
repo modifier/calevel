@@ -13,12 +13,17 @@ import enFlag from "flag-icons/flags/4x3/gb.svg?raw";
 import ruFlag from "flag-icons/flags/4x3/ru.svg?raw";
 import uzFlag from "flag-icons/flags/4x3/uz.svg?raw";
 
+export type IconName = keyof typeof CaIcon.mapping;
+
+/**
+ * An icon.
+ */
 @customElement("ca-icon")
 export default class CaIcon extends LitElement {
   @property()
-  name!: string;
+  name!: IconName;
 
-  private static mapping: Record<string, string> = {
+  static mapping: Record<string, string> = {
     undo: undoIcon,
     share: shareIcon,
     save: saveIcon,

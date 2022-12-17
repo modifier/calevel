@@ -1,3 +1,8 @@
+/**
+ * The list of different translatable labels.
+ *
+ * In some places {} is used. This means that some dynamic value will be put there in the code.
+ */
 export default {
   mainLabel: {
     en: "Central Asia Level {}",

@@ -4,6 +4,9 @@ import html2canvas from "html2canvas";
 import labels from "../../data/labels";
 import { LocaleController } from "../../controllers/locale-controller";
 
+/**
+ * A full-screen modal which is shown when someone has shared a link with their results.
+ */
 @customElement("ca-shared")
 export default class CaShare extends LitElement {
   private locale = new LocaleController(this);

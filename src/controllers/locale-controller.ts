@@ -1,6 +1,10 @@
 import { ReactiveController, ReactiveControllerHost } from "lit";
 import { Locale } from "../data/locales";
 
+/**
+ * A controller which makes it easier to change the locale. When the locale is changed, the change is propagated to
+ * all ot the subscribers and the language changes will take effect everywhere.
+ */
 export class LocaleController implements ReactiveController {
   host: ReactiveControllerHost;
 

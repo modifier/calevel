@@ -16,6 +16,9 @@ import { getDefaultLocale } from "../utils/locale";
 import { getSavedCountries, getSharedState } from "../utils/state-encoder";
 import { LocaleController } from "../controllers/locale-controller";
 
+/**
+ * An application entrypoint - brings everything together.
+ */
 @customElement("ca-app")
 export class CaApp extends LitElement {
   private locale = new LocaleController(this);

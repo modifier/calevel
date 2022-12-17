@@ -1,22 +1,28 @@
 import { css, html, LitElement, PropertyValues } from "lit";
-import { customElement, property } from "lit/decorators.js";
+import { customElement, property, state } from "lit/decorators.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 import Map from "../../assets/map.svg?raw";
 import { countries } from "../../data/countries";
 import levels from "../../data/levels";
 import { LocaleController } from "../../controllers/locale-controller";
 
+/**
+ * A map of the region and their labels.
+ */
 @customElement("ca-map")
 export default class CaMap extends LitElement {
   private locale = new LocaleController(this);
 
+  /**
+   * The list of levels that user set for each territory. This is used to update background colors of each territory.
+   */
   @property({ type: Object })
   private levelsByCountry: Record<string, string> = {};
 
-  @property({ attribute: false })
+  @state()
   private selectedCountry: string | null = null;
 
-  @property({ attribute: false, type: Object })
+  @state()
   private position: { x: number; y: number } | null = null;
 
   render() {
@@ -77,20 +83,20 @@ export default class CaMap extends LitElement {
 
   private updateCountryLabels() {
     for (const [countryKey, countryName] of Object.entries(countries)) {
-      const label = this.locale.t(countryName);
+      const label = this.locale.t(countryName).split("\n");
 
       const countryLabels = this.renderRoot.querySelectorAll(
         `[data-country-name=${countryKey}]`
       ) as unknown as SVGTextElement[];
       for (let i = 0; i < countryLabels.length; i++) {
-        countryLabels[i].innerHTML = Array.isArray(label) ? label[i] : label;
+        countryLabels[i].innerHTML = label[i] || "";
       }
 
       let countries = Array.from(
         this.renderRoot.querySelectorAll(`[data-country=${countryKey}]`)
       ) as SVGPathElement[];
       for (const element of countries) {
-        element.ariaLabel = label;
+        element.ariaLabel = label.join("");
       }
     }
   }

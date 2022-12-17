@@ -6,6 +6,9 @@ import { encodeState } from "../../utils/state-encoder";
 import { LocaleController } from "../../controllers/locale-controller";
 import "../atoms/ca-code";
 
+/**
+ * A full-screen modal which allows user to download and share their country status or share a link with their results.
+ */
 @customElement("ca-share")
 export default class CaShare extends LitElement {
   private locale = new LocaleController(this);
