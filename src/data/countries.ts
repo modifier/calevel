@@ -81,9 +81,9 @@ export const sortedCountries = [
   },
   {
     key: "Oskemen",
-    en: "\nOskemen",
-    uz: "\nOʻskemen",
-    ru: "Усть-\nКаменогорск",
+    en: "Oskemen",
+    uz: "Oʻskemen",
+    ru: "Оскемен",
   },
   {
     key: "Jetisu",
@@ -165,9 +165,9 @@ export const sortedCountries = [
   },
   {
     key: "Karakol",
-    en: "Karakol",
-    uz: "Qoraqoʻl",
-    ru: "Каракол",
+    en: "Issyk-Kul",
+    uz: "Issiqkoʻl",
+    ru: "Иссык-Куль",
   },
   {
     key: "Batken",
